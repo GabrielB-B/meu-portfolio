@@ -1,153 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- GOOGLE FONTS -->
+    <meta name="description" content="Portfolio de Gabriel Bomfim Bispo com foco em Python, automacao, backend e sistemas para fluxos operacionais reais.">
+    <title>Gabriel Bomfim Bispo | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">   
-    <!-- FIM GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Portfólio Pessoal</title>
 </head>
 <body>
-    <header>
-        <div class="interface">
-            <div class="logo">
-                <a href="#">
-                    <img src="imagens/logo.png" alt="Logo">
-                </a>
-            </div> <!-- logo -->
-            <nav class="menu-desktop">
-                <ul>
-                    <li><a href="#topo-do-site">Início</a></li>
-                    <li><a href="#sobre">Sobre mim</a></li>
-                    <li><a href="#especialidades">Formação Educacional</a></li>
-                    <li><a href="#portfolio">Projetos</a></li>
-                </ul>
-            </nav>
-
-            <div class="btn-contato"> 
-                <a href="#formulario">
-                    <button>Contato</button>
-                </a>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="container nav-row">
+                <a class="brand" href="#topo">Gabriel B-B</a>
+                <nav class="site-nav" aria-label="Navegacao principal">
+                    <a href="#sobre">Sobre</a>
+                    <a href="#foco">Foco</a>
+                    <a href="#projetos">Projetos</a>
+                    <a href="#contato">Contato</a>
+                </nav>
             </div>
-        </div> <!-- interface -->
-    </header>
+        </header>
 
-    <main>
-        <section id="topo-do-site" class="topo-do-site">
-            <div class="interface">
-                <div class="flex">
-                    <div class="txt-topo-site">
-                        <h1>BEM-VINDO AO MEU PORTFÓLIO DE DESENVOLVIMENTO WEB<span>.</span></h1>
-                        <p>Sou Gabriel Bomfim Bispo, estudante de Análise e Desenvolvimento de Sistemas na Uninter e futuro desenvolvedor. Este portfólio é uma amostra da minha jornada no mundo da programação e tecnologia.</p>
-                        <div class="btn-contato">
-                            <a href="#formulario">
-                                <button>Entre em contato</button>
-                            </a>
+        <main>
+            <section class="hero" id="topo">
+                <div class="container hero-grid">
+                    <div class="hero-copy">
+                        <p class="eyebrow">Python • Automacao • Backend • SQL</p>
+                        <h1>Desenvolvedor em formacao com foco em projetos uteis, organizados e aplicados a problemas reais.</h1>
+                        <p class="hero-text">
+                            Sou Gabriel Bomfim Bispo. Construo automacoes, sistemas web e ferramentas internas
+                            voltadas para produtividade, controle operacional e qualidade de dados.
+                        </p>
+                        <div class="hero-actions">
+                            <a class="button button-primary" href="https://github.com/GabrielB-B" target="_blank" rel="noreferrer">Ver GitHub</a>
+                            <a class="button button-secondary" href="mailto:gabrielb.b@outlook.com">Enviar email</a>
                         </div>
-                    </div> <!-- txt-topo-site -->
-
-                    <div class="img-topo-site">
-                        <img src="imagens/gabriel.png" alt="Imagem de Gabriel">
-                    </div> <!-- img-topo-site -->
-                </div><!-- flex -->
-            </div><!-- interface -->
-        </section> <!-- topo-do-site -->
-
-        <section id="especialidades" class="especialidades"> <!-- Essa seção é sobre minha formação educacional. -->
-            <div class="interface">
-                <h2 class="titulo">FORMAÇÃO <span>EDUCACIONAL.</span></h2>
-                <div class="especialidades-box">
-                    <h3 class="t2">Análise e Desenvolvimento de Sistemas</h3>
-                    <p><strong>ADS</strong> - Uninter</p>
-                    <p>Atualmente cursando, com foco em desenvolvimento de software, banco de dados e tecnologia da informação.</p>
-                </div>
-
-                <div class="especialidades-box">
-                    <h3 class="t2">Outros Cursos</h3>
-                    <p><strong>Curso de Full Stack</strong> - Danki Code</p>
-                    <p>Curso voltado para o desenvolvimento completo de aplicações web, abrangendo tecnologias front-end e back-end.</p>
-                </div>
-
-                <div class="especialidades-box">
-                    <h3 class="t2">Idiomas</h3>
-                    <p><strong>Inglês</strong> - Uninter</p>
-                    <p>Atualmente cursando, com foco em leitura, escrita e conversação em inglês.</p>
-                </div>
-
-                <div class="especialidades-box">
-                    <h3 class="t2">Ciências Atuariais</h3>
-                    <p><strong>Ciências Atuariais</strong> - Universidade Federal de Sergipe (UFS)</p>
-                    <p>Curso voltado para a análise de riscos e seguros, com foco em estatística e matemática financeira.</p>
-                </div>
-            </div><!-- interface -->
-        </section><!-- especialidades -->
-
-        <section id="sobre" class="sobre">
-            <div class="interface">
-                <div class="flex">
-                    <div class="img-sobre">
-                        <img src="imagens/soueu.jpeg" alt="">
-                    </div><!--img-sobre-->
-                    <div class="txt-sobre">
-                        <h2>MUITO PRAZER, <span>SOU GABRIEL BOMFIM.</span></h2>
-                        <p>Sou Gabriel Bomfim Bispo, atualmente estudando Análise e Desenvolvimento de Sistemas (ADS) e apaixonado por tecnologia, música e trabalhos sociais. Com um forte interesse em desenvolvimento web e programação, estou sempre em busca de novos desafios que me permitam aplicar e expandir minhas habilidades técnicas. Embora ainda esteja em fase de estudos, tenho uma sólida compreensão dos fundamentos da programação e estou desenvolvendo competências em diversas áreas, incluindo Python, HTML, CSS e JavaScript..</p>
-                        <p>Meu amor por música e envolvimento em trabalhos sociais influenciam minha abordagem criativa e empática ao resolver problemas e criar soluções tecnológicas. Estou comprometido em usar a tecnologia para impactar positivamente a sociedade, aplicando meu conhecimento para desenvolver projetos que atendam às necessidades da comunidade e ofereçam valor real.</p>
-                        <p>Sempre busco desafios que me permitam crescer e aprender, e estou preparado para enfrentar novas oportunidades com entusiasmo e dedicação. Minha formação em ADS está me preparando para construir aplicações inovadoras e eficientes, e estou ansioso para aplicar esse conhecimento em projetos que unam tecnologia e impacto social.</p>
-                        <div class="btn-social"> <!--Estou criando essa div para no futuro atualizar com minhas redes sociais-->
-                            <a href="#"><button></button></a>
-                            <a href="#"><button></button></a>
-                            <a href="#"><button></button></a>
+                    </div>
+                    <div class="hero-card">
+                        <img src="imagens/soueu.jpeg" alt="Foto de Gabriel Bomfim Bispo">
+                        <div class="hero-card-body">
+                            <strong>Base atual</strong>
+                            <p>ADS, automacao com Python, desenvolvimento web e evolucao continua em arquitetura e qualidade.</p>
                         </div>
-                    </div><!--txt-sobre-->
+                    </div>
                 </div>
-            </div><!--interface-->
-        </section><!--sobre-->
+            </section>
 
-        <section id="portfolio" class="portfolio"> <!--Estou usando uma imagem de um projeto de designe no lugar dos links de sites que foram pedidos, porque eu não tenho ainda outros projetos realizados-->
-            <div class="interface">
-                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
-                <div class="flex">
-                    <div class="img-port" style="background-image: url(imagens/imagem.jpg) ;">
-                        <div class="overlay">projeto 1</div>
+            <section class="section" id="sobre">
+                <div class="container section-grid">
+                    <div>
+                        <p class="section-label">Sobre</p>
+                        <h2>Perfil profissional</h2>
                     </div>
-                        
-                    <div class="img-port" style="background-image: url(imagens/imagem.jpg) ;">
-                        <div class="overlay">projeto 2</div>
+                    <div class="section-copy">
+                        <p>
+                            Tenho interesse especial por projetos que substituem controles manuais,
+                            planilhas dispersas e tarefas repetitivas por sistemas mais confiaveis,
+                            rastreaveis e produtivos.
+                        </p>
+                        <p>
+                            Meu trabalho tem girado em torno de Python, automacao de processos,
+                            processamento de planilhas e PDFs, backend web e organizacao de fluxos internos.
+                        </p>
                     </div>
-                        
-                    <div class="img-port" style="background-image: url(imagens/imagem.jpg) ;">
-                        <div class="overlay">projeto 3</div>
-                    </div>
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--portfolio-->
+                </div>
+            </section>
 
-        <section id="formulario" class="formulario">
-            <div class="interface">
-                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+            <section class="section section-muted" id="foco">
+                <div class="container">
+                    <p class="section-label">Foco tecnico</p>
+                    <h2>O que tenho desenvolvido</h2>
+                    <div class="pill-grid">
+                        <span class="pill">Python para automacao</span>
+                        <span class="pill">Backend web</span>
+                        <span class="pill">SQL e modelagem</span>
+                        <span class="pill">Processamento de planilhas</span>
+                        <span class="pill">Fluxos com PDFs</span>
+                        <span class="pill">Interfaces para uso interno</span>
+                        <span class="pill">Ferramentas operacionais</span>
+                        <span class="pill">Organizacao de repositorios</span>
+                    </div>
+                </div>
+            </section>
 
-                <form action="">
-                    <input type="text" name="" id="" placeholder="Seu nome completo:" required>
-                    <input type="text" name="" id="" placeholder="Seu e-mail:" required>
-                    <input type="text" name="" id="" placeholder="Seu celular:">
-                    <textarea name="" id="" placeholder="Sua mensagem"></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
-                </form>
-            </div><!--interface-->
-        </section><!--formulario-->
-    </main>
-    <footer>
-        <div class="footer-interface">
-            <div class="footer-logo">
-                <img src="imagens/logo.png" alt="Logo do Rodapé">
-            </div>
-            <p>&copy; 2024 Gabriel Bomfim Bispo. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-    
+            <section class="section" id="projetos">
+                <div class="container">
+                    <p class="section-label">Projetos</p>
+                    <h2>Trabalhos que melhor representam meu perfil</h2>
+                    <div class="project-grid">
+                        <article class="project-card">
+                            <p class="project-tag">Flask • SQLAlchemy • Pytest</p>
+                            <h3>SISCON Controle de RPVs</h3>
+                            <p>
+                                Sistema web voltado ao controle financeiro e operacional de RPVs,
+                                com regras de negocio, testes, migrations e estrutura preparada para portfolio.
+                            </p>
+                            <a href="https://github.com/GabrielB-B/siscon-controle-rpv" target="_blank" rel="noreferrer">Abrir repositorio</a>
+                        </article>
+
+                        <article class="project-card">
+                            <p class="project-tag">Python • Selenium • Tkinter</p>
+                            <h3>Automacao de Guias Judiciais</h3>
+                            <p>
+                                Aplicacao desktop para processar planilhas, navegar em portal judicial,
+                                gerar guias e salvar PDFs com validacao, retomada e relatorio final.
+                            </p>
+                            <a href="https://github.com/GabrielB-B/automacao-rpvs" target="_blank" rel="noreferrer">Abrir repositorio</a>
+                        </article>
+
+                        <article class="project-card">
+                            <p class="project-tag">Python • Impacto social</p>
+                            <h3>Cesta Digital</h3>
+                            <p>
+                                Projeto com foco em organizacao de cadastros e apoio a fluxos de analise
+                                socioeconomica e distribuicao com melhor controle das informacoes.
+                            </p>
+                            <a href="https://github.com/GabrielB-B/Cesta_Digital" target="_blank" rel="noreferrer">Abrir repositorio</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-accent" id="contato">
+                <div class="container contact-grid">
+                    <div>
+                        <p class="section-label">Contato</p>
+                        <h2>Aberto a oportunidades e conexoes profissionais.</h2>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:gabrielb.b@outlook.com">gabrielb.b@outlook.com</a>
+                        <a href="https://github.com/GabrielB-B" target="_blank" rel="noreferrer">github.com/GabrielB-B</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
