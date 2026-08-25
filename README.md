@@ -26,8 +26,8 @@ This repository is the public presentation layer of my GitHub profile. The site 
 ## Featured Projects Linked From The Site
 
 - `siscon-controle-rpv`
-- `automacao-rpvs`
-- `Cesta_Digital`
+- `precatorios-pdf-to-excel`
+- `Cesta-Digital`
 
 ## Run Locally
 
