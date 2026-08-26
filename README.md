@@ -1,38 +1,20 @@
-# Gabriel Bomfim Bispo - Portfolio Website
+# Portfólio de Gabriel Bomfim Bispo
 
-Personal portfolio website built with HTML and CSS to present my background, featured projects, technical focus, and contact information.
+Este repositório contém meu site pessoal. Nele apresento minha formação, as tecnologias
+com que venho trabalhando e alguns projetos que representam minha experiência com Python,
+automação e desenvolvimento backend.
 
-## Purpose
-
-This repository is the public presentation layer of my GitHub profile. The site is designed to be simple, direct, and recruiter-friendly, highlighting:
-
-- who I am
-- what I build
-- which projects best represent my work
-- how to contact me
-
-## Featured Areas
-
-- professional summary
-- technical focus
-- selected portfolio projects
-- direct contact links
-
-## Stack
+## Tecnologias do site
 
 - HTML5
 - CSS3
 
-## Featured Projects Linked From The Site
+## Projetos apresentados
 
-- `siscon-controle-rpv`
-- `precatorios-pdf-to-excel`
-- `Cesta-Digital`
+- [SISCON Controle de RPVs](https://github.com/GabrielB-B/siscon-controle-rpv)
+- [Precatórios PDF to Excel](https://github.com/GabrielB-B/precatorios-pdf-to-excel)
+- [Cesta Digital](https://github.com/GabrielB-B/Cesta-Digital)
 
-## Run Locally
+## Como visualizar
 
-Open `index.html` in the browser.
-
-## Notes
-
-This repository was cleaned up and reframed as a professional portfolio project. Earlier classroom-oriented wording was removed so the public presentation better reflects real hiring use.
+Baixe o repositório e abra o arquivo `index.html` no navegador.
