@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Estudo de caso do Emissor de Guias PGE, automação privada criada por Gabriel Bomfim Bispo para uma rotina financeira real.">
+    <title>Emissor de Guias PGE | Estudo de caso</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../case-study.css">
+</head>
+<body>
+    <a class="case-skip" href="#conteudo">Pular para o conteúdo</a>
+    <header class="case-header">
+        <nav class="case-container case-nav" aria-label="Navegação do estudo de caso">
+            <a class="case-brand" href="../index.html#inicio"><span class="case-brand-mark" aria-hidden="true">GB</span><span>Gabriel Bispo</span></a>
+            <a class="case-back" href="../index.html#projetos">← Voltar aos projetos</a>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <section class="case-hero" aria-labelledby="case-title">
+            <div class="case-container case-hero-inner">
+                <div>
+                    <p class="case-kicker">Estudo de caso · automação</p>
+                    <h1 id="case-title">Emissor de Guias PGE</h1>
+                    <p class="case-deck">Uma automação privada criada a partir de uma rotina que eu conhecia por dentro: conferir dados, conduzir emissões no navegador e organizar cada resultado.</p>
+                </div>
+                <dl class="case-meta">
+                    <div><dt>Status</dt><dd>Uso interno</dd></div>
+                    <div><dt>Contexto</dt><dd>Setor financeiro</dd></div>
+                    <div><dt>Acesso</dt><dd>Código privado</dd></div>
+                </dl>
+            </div>
+        </section>
+        <div class="case-container case-main">
+            <aside class="case-aside" aria-label="Resumo do projeto">
+                <p>Projeto desenvolvido por Gabriel Bomfim Bispo para apoiar uma rotina do setor financeiro da PGE de Sergipe.</p>
+                <a href="mailto:gabrielb.b@outlook.com">Conversar sobre o projeto</a>
+            </aside>
+            <article class="case-content">
+                <section class="case-section">
+                    <p class="case-section-label">01 / Contexto</p>
+                    <h2>O problema vinha da repetição.</h2>
+                    <p>A emissão de guias exigia repetir etapas no navegador, conferir dados vindos de planilhas, organizar os arquivos gerados e registrar o resultado de cada item processado.</p>
+                    <p>A solução nasceu da observação direta desse fluxo, não de um exercício fictício.</p>
+                </section>
+                <section class="case-section">
+                    <p class="case-section-label">02 / Solução</p>
+                    <h2>Automatizar sem retirar o controle humano.</h2>
+                    <ul class="case-list">
+                        <li>Lê lotes em planilhas ODS e Excel e normaliza os dados.</li>
+                        <li>Conduz o fluxo de emissão no navegador e preserva confirmações humanas quando necessárias.</li>
+                        <li>Baixa, valida e organiza os PDFs gerados.</li>
+                        <li>Permite pausar, interromper e retomar o processamento.</li>
+                        <li>Produz relatório final com sucessos e falhas e mascara informações sensíveis nos registros.</li>
+                    </ul>
+                </section>
+                <section class="case-section">
+                    <p class="case-section-label">03 / Decisões técnicas</p>
+                    <h2>Confiabilidade para uma rotina real.</h2>
+                    <p>O processamento em lote usa política de retentativas e diagnóstico local de compatibilidade entre Chrome e ChromeDriver. A distribuição foi preparada como aplicativo Windows e o núcleo possui testes automatizados.</p>
+                    <ul class="case-tech" aria-label="Tecnologias usadas">
+                        <li>Python</li><li>Selenium</li><li>Tkinter</li><li>openpyxl</li><li>ezodf</li>
+                    </ul>
+                </section>
+                <section class="case-section">
+                    <p class="case-section-label">04 / Resultado e limites</p>
+                    <h2>Menos repetição, acompanhamento mais claro.</h2>
+                    <p>A ferramenta reduziu o trabalho manual repetitivo, padronizou a execução por lote e tornou mais claro o que foi processado e o que ainda exige atenção.</p>
+                    <div class="case-note"><p>Por privacidade, código-fonte, endereços internos, credenciais, documentos, planilhas e dados operacionais não são públicos. Este estudo apresenta apenas o que pode ser compartilhado com segurança.</p></div>
+                </section>
+            </article>
+        </div>
+    </main>
+    <footer class="case-footer"><div class="case-container case-footer-inner"><span>© 2026 Gabriel Bomfim Bispo.</span><a href="../index.html#projetos">Ver todos os projetos</a></div></footer>
+</body>
+</html>

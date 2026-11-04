@@ -1,0 +1,305 @@
+:root {
+    --case-ink: #111511;
+    --case-paper: #f3f0e7;
+    --case-white: #fffef9;
+    --case-muted: #5f675f;
+    --case-line: rgba(17, 21, 17, 0.16);
+    --case-signal: #bddb7a;
+    --case-display: "Fraunces", Georgia, serif;
+    --case-body: "IBM Plex Sans", sans-serif;
+    --case-mono: "IBM Plex Mono", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    color: var(--case-ink);
+    background: var(--case-paper);
+    font-family: var(--case-body);
+    font-size: 1rem;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+:focus-visible {
+    outline: 3px solid #6d8538;
+    outline-offset: 4px;
+}
+
+.case-skip {
+    position: fixed;
+    top: -80px;
+    left: 16px;
+    z-index: 20;
+    padding: 10px 14px;
+    color: var(--case-ink);
+    background: var(--case-signal);
+    font-weight: 700;
+    transition: top 180ms ease;
+}
+
+.case-skip:focus { top: 16px; }
+
+.case-container {
+    width: min(1120px, calc(100% - 64px));
+    margin-inline: auto;
+}
+
+.case-header {
+    color: var(--case-white);
+    background: var(--case-ink);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.case-nav {
+    display: flex;
+    min-height: 76px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.case-brand {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    color: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.case-brand-mark {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    color: var(--case-ink);
+    background: var(--case-signal);
+    font-family: var(--case-mono);
+    font-size: 0.72rem;
+}
+
+.case-back {
+    color: rgba(255, 255, 255, 0.78);
+    font-family: var(--case-mono);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.case-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(86px, 11vw, 150px) 0 clamp(76px, 9vw, 120px);
+    color: var(--case-white);
+    background: var(--case-ink);
+}
+
+.case-hero::after {
+    position: absolute;
+    inset: 0;
+    opacity: 0.14;
+    background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.13) 0 1px, transparent 1px 25%);
+    mask-image: linear-gradient(to right, black, transparent 72%);
+    content: "";
+    pointer-events: none;
+}
+
+.case-hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(250px, .7fr);
+    gap: clamp(48px, 9vw, 120px);
+    align-items: end;
+}
+
+.case-kicker,
+.case-section-label,
+.case-meta dt {
+    font-family: var(--case-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.case-kicker { color: var(--case-signal); }
+
+.case-hero h1 {
+    max-width: 10ch;
+    margin: 22px 0 28px;
+    font-family: var(--case-display);
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 600;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+}
+
+.case-deck {
+    max-width: 690px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+}
+
+.case-meta {
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.case-meta div {
+    display: grid;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    grid-template-columns: 84px 1fr;
+    gap: 14px;
+}
+
+.case-meta dt { color: rgba(255, 255, 255, 0.52); }
+.case-meta dd { margin: 0; font-weight: 600; }
+
+.case-main {
+    display: grid;
+    padding: clamp(80px, 10vw, 140px) 0;
+    grid-template-columns: minmax(180px, .35fr) minmax(0, 1fr);
+    gap: clamp(48px, 9vw, 130px);
+}
+
+.case-aside {
+    position: sticky;
+    top: 28px;
+    align-self: start;
+}
+
+.case-aside p {
+    margin: 0 0 18px;
+    color: var(--case-muted);
+    font-size: 0.92rem;
+}
+
+.case-aside a {
+    font-weight: 700;
+    text-underline-offset: 4px;
+}
+
+.case-content { max-width: 760px; }
+
+.case-section {
+    padding: 0 0 64px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid var(--case-line);
+}
+
+.case-section:last-child { margin-bottom: 0; }
+.case-section-label { color: var(--case-muted); }
+
+.case-section h2 {
+    max-width: 13ch;
+    margin: 12px 0 24px;
+    font-family: var(--case-display);
+    font-size: clamp(2.45rem, 5vw, 4.3rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 1;
+}
+
+.case-section p {
+    margin: 0 0 20px;
+    color: var(--case-muted);
+    font-size: 1.05rem;
+}
+
+.case-list {
+    display: grid;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--case-line);
+}
+
+.case-list li {
+    position: relative;
+    padding: 16px 10px 16px 34px;
+    border-bottom: 1px solid var(--case-line);
+}
+
+.case-list li::before {
+    position: absolute;
+    top: 24px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    background: #7b9344;
+    border-radius: 50%;
+    content: "";
+}
+
+.case-tech {
+    display: flex;
+    margin: 26px 0 0;
+    padding: 0;
+    gap: 8px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.case-tech li {
+    padding: 7px 10px;
+    background: var(--case-white);
+    border: 1px solid var(--case-line);
+    font-family: var(--case-mono);
+    font-size: 0.72rem;
+}
+
+.case-note {
+    padding: 28px;
+    color: var(--case-white);
+    background: #1b211c;
+    border-left: 4px solid var(--case-signal);
+}
+
+.case-note p { margin: 0; color: rgba(255,255,255,.72); }
+
+.case-footer {
+    padding: 34px 0;
+    color: rgba(255, 255, 255, 0.65);
+    background: var(--case-ink);
+}
+
+.case-footer-inner {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    font-size: 0.82rem;
+}
+
+.case-footer a { color: var(--case-white); }
+
+@media (max-width: 760px) {
+    .case-container { width: min(100% - 32px, 1120px); }
+    .case-nav { min-height: 68px; }
+    .case-brand > span:last-child { display: none; }
+    .case-back { font-size: 0.68rem; }
+    .case-hero-inner,
+    .case-main { grid-template-columns: 1fr; }
+    .case-hero h1 { font-size: clamp(3.65rem, 18vw, 5.7rem); }
+    .case-aside { position: static; }
+    .case-main { gap: 56px; }
+    .case-section { padding-bottom: 48px; margin-bottom: 48px; }
+    .case-footer-inner { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}

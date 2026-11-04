@@ -178,6 +178,14 @@ try {
                     scrollTo(0, y);
                     await new Promise((done) => setTimeout(done, 35));
                 }
+                await Promise.all([...document.images].map((image) => {
+                    if (image.complete) return Promise.resolve();
+                    return new Promise((done) => {
+                        image.addEventListener('load', done, { once: true });
+                        image.addEventListener('error', done, { once: true });
+                        setTimeout(done, 5000);
+                    });
+                }));
                 document.querySelectorAll('[data-reveal]').forEach((item) => item.classList.add('is-visible'));
                 scrollTo(0, 0);
                 dispatchEvent(new Event('scroll'));
@@ -214,6 +222,7 @@ try {
                     title: document.title,
                     h1Count: document.querySelectorAll('h1').length,
                     projectCount: document.querySelectorAll('.project-card').length,
+                    projectImageCount: document.querySelectorAll('.project-media-image').length,
                     fontsReady: document.fonts.status,
                 };
             })()`,
@@ -283,6 +292,31 @@ try {
         }
 
         report.push(diagnostics);
+    }
+
+    const casePages = [
+        { path: '/projetos/emissor-pge.html', width: 1440, height: 900, screenshot: 'case-emissor-desktop.png' },
+        { path: '/projetos/rag-juridico-local.html', width: 390, height: 844, screenshot: 'case-rag-mobile.png' },
+    ];
+
+    for (const page of casePages) {
+        await send('Emulation.setDeviceMetricsOverride', {
+            width: page.width,
+            height: page.height,
+            deviceScaleFactor: 1,
+            mobile: page.width <= 768,
+        });
+
+        const loaded = once('Page.loadEventFired');
+        await send('Page.navigate', { url: `${baseUrl}${page.path}` });
+        await loaded;
+        await send('Runtime.evaluate', {
+            awaitPromise: true,
+            expression: `(async () => { await document.fonts.ready; await new Promise((done) => setTimeout(done, 350)); })()`,
+        });
+
+        const image = await send('Page.captureScreenshot', { format: 'png' });
+        await writeFile(join(root, 'docs', 'screenshots', page.screenshot), Buffer.from(image.data, 'base64'));
     }
 
     await writeFile(join(root, 'docs', 'screenshots', 'visual-review.json'), `${JSON.stringify(report, null, 2)}\n`);

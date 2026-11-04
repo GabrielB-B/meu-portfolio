@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Estudo de caso do RAG Jurídico Local de Gabriel Bomfim Bispo, projeto em desenvolvimento para consultar legislação brasileira com fontes rastreáveis.">
+    <title>RAG Jurídico Local | Estudo de caso</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../case-study.css">
+</head>
+<body>
+    <a class="case-skip" href="#conteudo">Pular para o conteúdo</a>
+    <header class="case-header">
+        <nav class="case-container case-nav" aria-label="Navegação do estudo de caso">
+            <a class="case-brand" href="../index.html#inicio"><span class="case-brand-mark" aria-hidden="true">GB</span><span>Gabriel Bispo</span></a>
+            <a class="case-back" href="../index.html#projetos">← Voltar aos projetos</a>
+        </nav>
+    </header>
+    <main id="conteudo">
+        <section class="case-hero" aria-labelledby="case-title">
+            <div class="case-container case-hero-inner">
+                <div>
+                    <p class="case-kicker">Estudo de caso · IA local</p>
+                    <h1 id="case-title">RAG Jurídico Local</h1>
+                    <p class="case-deck">Um projeto em desenvolvimento para organizar, recuperar e consultar legislação brasileira com fontes oficiais, rastreabilidade e execução local.</p>
+                </div>
+                <dl class="case-meta">
+                    <div><dt>Status</dt><dd>Em desenvolvimento</dd></div>
+                    <div><dt>Fase</dt><dd>Camada vetorial</dd></div>
+                    <div><dt>Modelo</dt><dd>Llama local</dd></div>
+                </dl>
+            </div>
+        </section>
+        <div class="case-container case-main">
+            <aside class="case-aside" aria-label="Resumo do projeto">
+                <p>Estudo prático de engenharia de dados, busca semântica e modelos locais aplicado a textos jurídicos.</p>
+                <a href="mailto:gabrielb.b@outlook.com">Conversar sobre o projeto</a>
+            </aside>
+            <article class="case-content">
+                <section class="case-section">
+                    <p class="case-section-label">01 / Contexto</p>
+                    <h2>Uma base jurídica precisa ser rastreável.</h2>
+                    <p>A proposta é construir uma base em que os textos venham de fontes oficiais, preservem seus metadados e possam ser relacionados à norma de origem.</p>
+                    <p>O projeto também é meu laboratório para estudar recuperação de informação, engenharia de dados e uso local de modelos de linguagem.</p>
+                </section>
+                <section class="case-section">
+                    <p class="case-section-label">02 / O que já existe</p>
+                    <h2>Do texto oficial à busca semântica.</h2>
+                    <ul class="case-list">
+                        <li>Coleta de legislação a partir de identificadores e fontes oficiais.</li>
+                        <li>Extração, limpeza, normalização e registro canônico em JSON.</li>
+                        <li>Divisão do texto por artigos e hierarquia jurídica.</li>
+                        <li>Persistência local em JSON e JSONL.</li>
+                        <li>Estrutura para PostgreSQL, pgvector e embeddings locais.</li>
+                        <li>Interface de linha de comando e testes para utilitários e segmentação jurídica.</li>
+                    </ul>
+                </section>
+                <section class="case-section">
+                    <p class="case-section-label">03 / Próxima etapa</p>
+                    <h2>Responder com referência explícita.</h2>
+                    <p>Estão em desenvolvimento a consolidação da camada vetorial, a geração de respostas com Llama local, a referência aos trechos recuperados e a validação das respostas contra as fontes.</p>
+                    <ul class="case-tech" aria-label="Tecnologias usadas">
+                        <li>Python</li><li>Beautiful Soup</li><li>sentence-transformers</li><li>PostgreSQL</li><li>pgvector</li><li>Llama</li>
+                    </ul>
+                </section>
+                <section class="case-section">
+                    <p class="case-section-label">04 / Limites</p>
+                    <h2>Privacidade local, estágio honesto.</h2>
+                    <p>O processamento local permite estudar IA generativa sem depender do envio do conteúdo consultado para um serviço externo.</p>
+                    <div class="case-note"><p>O projeto ainda está em evolução, não substitui consulta às fontes oficiais e não deve ser apresentado como ferramenta de aconselhamento jurídico.</p></div>
+                </section>
+            </article>
+        </div>
+    </main>
+    <footer class="case-footer"><div class="case-container case-footer-inner"><span>© 2026 Gabriel Bomfim Bispo.</span><a href="../index.html#projetos">Ver todos os projetos</a></div></footer>
+</body>
+</html>
