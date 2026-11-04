@@ -239,6 +239,7 @@ try {
                     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Tab', bubbles: true }));
                     const focusLoop = document.activeElement === document.querySelector('.brand');
                     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+                    await new Promise((done) => setTimeout(done, 350));
                     const closed = button.getAttribute('aria-expanded') === 'false'
                         && !document.querySelector('main').inert;
                     return { opened, focusedLast, focusLoop, closed };
