@@ -447,37 +447,33 @@ ol {
 
 .portrait-composition {
     position: relative;
-    align-self: stretch;
     display: flex;
-    min-height: 520px;
+    min-height: 440px;
+    align-self: center;
     align-items: center;
     justify-content: center;
 }
 
-.portrait-composition::before {
-    position: absolute;
-    inset: 18% 2% 10% 24%;
-    background: #222a23;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    content: "";
-}
-
-.portrait-composition::after {
-    position: absolute;
-    top: 11%;
-    right: 0;
-    width: 42%;
-    height: 1px;
-    background: rgba(189, 219, 122, 0.58);
-    content: "";
-}
-
 .portrait-frame {
     position: relative;
-    z-index: 2;
-    width: min(100%, 340px);
-    animation: portrait-float 5.8s ease-in-out infinite alternate;
+    width: min(100%, 320px);
+    animation: portrait-float 5.6s ease-in-out infinite alternate;
     will-change: transform;
+}
+
+.portrait-photo {
+    position: relative;
+    isolation: isolate;
+}
+
+.portrait-photo::before {
+    position: absolute;
+    inset: 12px -12px -12px 12px;
+    z-index: -1;
+    background: #1b231d;
+    border: 1px solid rgba(189, 219, 122, 0.3);
+    border-radius: 22px;
+    content: "";
 }
 
 .portrait-media {
@@ -485,15 +481,16 @@ ol {
     aspect-ratio: 1;
     overflow: hidden;
     background: #cdd8d4;
-    border: 1px solid rgba(255, 255, 255, 0.13);
-    border-radius: 26px 26px 8px 8px;
-    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 22px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.26);
 }
 
 .portrait-media::after {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(7, 17, 12, 0.24), transparent 38%);
+    background: linear-gradient(to top, rgba(7, 17, 12, 0.08), transparent 30%);
+    pointer-events: none;
     content: "";
 }
 
@@ -502,95 +499,37 @@ ol {
     height: 100%;
     object-fit: cover;
     object-position: 50% 50%;
-    filter: saturate(0.92) contrast(0.98) brightness(0.99);
-    transform: scale(1.01);
+    filter: none;
+    transform: none;
 }
 
 @keyframes portrait-float {
-    from { transform: translateY(6px); }
-    to { transform: translateY(-10px); }
+    from { transform: translateY(5px); }
+    to { transform: translateY(-8px); }
 }
 
 .portrait-caption {
-    position: relative;
-    z-index: 3;
-    width: calc(100% - 28px);
-    margin: -22px 0 0 28px;
-    padding: 18px 20px 17px;
-    color: var(--ink);
-    background: rgba(243, 240, 231, 0.96);
-    border: 1px solid rgba(17, 21, 17, 0.14);
-    border-radius: 2px 2px 12px 2px;
-    box-shadow: 0 14px 34px rgba(5, 9, 7, 0.11);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-}
-
-.portrait-caption-heading {
     display: flex;
-    margin-bottom: 14px;
-    gap: 14px;
-    align-items: baseline;
+    margin-top: 22px;
+    padding: 12px 2px 0;
+    gap: 4px 18px;
+    color: rgba(255, 255, 255, 0.88);
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.portrait-caption-heading > span {
-    font-size: 0.82rem;
+.portrait-caption > span {
+    font-size: 0.76rem;
     font-weight: 700;
 }
 
-.portrait-caption-heading small {
-    color: var(--muted);
-    font-size: 0.65rem;
-}
-
-.portrait-caption ol {
-    display: grid;
-    padding-top: 11px;
-    border-top: 1px solid var(--line);
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.portrait-caption li {
-    display: grid;
-    padding-left: 10px;
-    border-left: 1px solid var(--line);
-    font-size: 0.72rem;
-    font-weight: 600;
-    gap: 1px;
-}
-
-.portrait-caption li:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-.portrait-caption li span {
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.56rem;
-    font-weight: 500;
-}
-
-.portrait-register {
-    position: absolute;
-    z-index: 4;
-    color: rgba(255, 255, 255, 0.46);
+.portrait-caption small {
+    color: rgba(255, 255, 255, 0.5);
     font-family: var(--font-mono);
     font-size: 0.58rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-.portrait-register-top {
-    top: 8%;
-    left: 7%;
-}
-
-.portrait-register-side {
-    right: -2%;
-    bottom: 17%;
-    writing-mode: vertical-rl;
+    letter-spacing: 0.03em;
 }
 
 .section {
@@ -1262,15 +1201,8 @@ ol {
         font-size: clamp(4.4rem, 12vw, 7rem);
     }
 
-    .portrait-composition { min-height: 520px; }
-    .portrait-frame { width: min(48vw, 340px); }
-
-    .portrait-composition::before {
-        inset: 14% 12% 7% 24%;
-    }
-
-    .portrait-register-top { left: 17%; }
-    .portrait-register-side { right: 10%; }
+    .portrait-composition { min-height: 430px; }
+    .portrait-frame { width: min(46vw, 320px); }
 
     .section-layout,
     .contact-layout {
@@ -1348,38 +1280,14 @@ ol {
         align-items: baseline;
     }
 
-    .portrait-composition { min-height: 420px; }
-    .portrait-frame { width: min(70vw, 270px); }
-
-    .portrait-composition::before {
-        inset: 13% 0 6% 15%;
-    }
-
-    .portrait-composition::after {
-        top: 8%;
-        width: 34%;
-    }
-
-    .portrait-register-top {
-        top: 5%;
-        left: 2%;
-    }
-
-    .portrait-register-side {
-        right: 0;
-        bottom: 13%;
-    }
+    .portrait-composition { min-height: 360px; }
+    .portrait-frame { width: min(66vw, 250px); }
 
     .portrait-caption {
-        width: calc(100% - 12px);
-        margin: -16px 0 0 12px;
-        padding: 15px 16px;
-    }
-
-    .portrait-caption-heading {
+        margin-top: 18px;
         align-items: flex-start;
         flex-direction: column;
-        gap: 2px;
+        gap: 3px;
     }
 
     .section { padding: 88px 0; }
@@ -1494,7 +1402,6 @@ ol {
 @media print {
     .site-header,
     .hero-grid-pattern,
-    .portrait-register,
     .contact-noise,
     .site-footer {
         display: none;
