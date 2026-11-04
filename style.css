@@ -276,8 +276,8 @@ ol {
     min-height: max(760px, 100svh);
     padding-top: calc(var(--header-height) + 62px);
     padding-bottom: 72px;
-    grid-template-columns: minmax(0, 1.04fr) minmax(380px, 0.76fr);
-    gap: clamp(54px, 7.5vw, 124px);
+    grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.62fr);
+    gap: clamp(48px, 6vw, 96px);
     align-items: center;
 }
 
@@ -449,14 +449,14 @@ ol {
     position: relative;
     align-self: stretch;
     display: flex;
-    min-height: 640px;
+    min-height: 520px;
     align-items: center;
     justify-content: center;
 }
 
 .portrait-composition::before {
     position: absolute;
-    inset: 15% 0 9% 18%;
+    inset: 18% 2% 10% 24%;
     background: #222a23;
     border: 1px solid rgba(255, 255, 255, 0.08);
     content: "";
@@ -475,17 +475,18 @@ ol {
 .portrait-frame {
     position: relative;
     z-index: 2;
-    width: min(100%, 440px);
-    animation: portrait-float 7s ease-in-out infinite alternate;
+    width: min(100%, 340px);
+    animation: portrait-float 5.8s ease-in-out infinite alternate;
+    will-change: transform;
 }
 
 .portrait-media {
     position: relative;
-    aspect-ratio: 0.7;
+    aspect-ratio: 1;
     overflow: hidden;
     background: #cdd8d4;
     border: 1px solid rgba(255, 255, 255, 0.13);
-    border-radius: 24px 24px 6px 6px;
+    border-radius: 26px 26px 8px 8px;
     box-shadow: var(--shadow);
 }
 
@@ -506,8 +507,8 @@ ol {
 }
 
 @keyframes portrait-float {
-    from { transform: translateY(0); }
-    to { transform: translateY(-5px); }
+    from { transform: translateY(6px); }
+    to { transform: translateY(-10px); }
 }
 
 .portrait-caption {
@@ -1261,8 +1262,8 @@ ol {
         font-size: clamp(4.4rem, 12vw, 7rem);
     }
 
-    .portrait-composition { min-height: 680px; }
-    .portrait-frame { width: min(66vw, 440px); }
+    .portrait-composition { min-height: 520px; }
+    .portrait-frame { width: min(48vw, 340px); }
 
     .portrait-composition::before {
         inset: 14% 12% 7% 24%;
@@ -1347,8 +1348,8 @@ ol {
         align-items: baseline;
     }
 
-    .portrait-composition { min-height: 535px; }
-    .portrait-frame { width: min(82vw, 330px); }
+    .portrait-composition { min-height: 420px; }
+    .portrait-frame { width: min(70vw, 270px); }
 
     .portrait-composition::before {
         inset: 13% 0 6% 15%;
