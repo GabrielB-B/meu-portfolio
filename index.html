@@ -1,145 +1,422 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Gabriel Bomfim Bispo com foco em Python, automação, backend e sistemas para fluxos operacionais reais.">
-    <title>Gabriel Bomfim Bispo | Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111713">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Portfólio de Gabriel Bomfim Bispo, desenvolvedor de software com foco em Python, backend, automação, aplicações web e soluções para processos reais.">
+    <meta name="author" content="Gabriel Bomfim Bispo">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Gabriel Bomfim Bispo | Desenvolvedor de software">
+    <meta property="og:description" content="Backend, automação e sistemas completos construídos para resolver necessidades operacionais reais.">
+    <meta property="og:url" content="https://gabrielb-b.github.io/meu-portfolio/">
+    <meta property="og:image" content="https://gabrielb-b.github.io/meu-portfolio/imagens/gabriel.png">
+    <meta property="og:image:alt" content="Retrato de Gabriel Bomfim Bispo">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gabriel Bomfim Bispo | Desenvolvedor de software">
+    <meta name="twitter:description" content="Backend, automação e sistemas completos para problemas reais.">
+    <meta name="twitter:image" content="https://gabrielb-b.github.io/meu-portfolio/imagens/gabriel.png">
+
+    <title>Gabriel Bomfim Bispo | Desenvolvedor de software</title>
+    <link rel="canonical" href="https://gabrielb-b.github.io/meu-portfolio/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,600,50;9..144,700,50&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="page-shell">
-        <header class="site-header">
-            <div class="container nav-row">
-                <a class="brand" href="#topo">Gabriel B-B</a>
-                <nav class="site-nav" aria-label="Navegação principal">
-                    <a href="#sobre">Sobre</a>
-                    <a href="#foco">Foco</a>
-                    <a href="#projetos">Projetos</a>
-                    <a href="#contato">Contato</a>
-                </nav>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header" data-header>
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="Ir para o início">
+                <span class="brand-mark" aria-hidden="true">GB</span>
+                <span class="brand-name">Gabriel Bispo</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu" data-menu-toggle>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-nav" id="menu-principal" aria-label="Navegação principal" data-nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#competencias">Competências</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="hero" id="inicio" aria-labelledby="hero-title">
+            <div class="hero-grid-pattern" aria-hidden="true"></div>
+            <div class="container hero-layout">
+                <div class="hero-copy" data-reveal>
+                    <p class="eyebrow"><span>Desenvolvedor de software</span></p>
+                    <h1 id="hero-title">Software para o <em>trabalho real.</em></h1>
+                    <p class="hero-lead">
+                        Transformo necessidades operacionais em sistemas organizados, automações confiáveis e experiências digitais claras — da regra de negócio à interface.
+                    </p>
+
+                    <div class="hero-actions" role="group" aria-label="Ações principais">
+                        <a class="button button-primary" href="#projetos">
+                            Ver projetos
+                            <span aria-hidden="true">↘</span>
+                        </a>
+                        <a class="button button-outline" href="https://github.com/GabrielB-B" target="_blank" rel="noreferrer">
+                            GitHub
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        <a class="text-link" href="mailto:gabrielb.b@outlook.com">Entrar em contato</a>
+                    </div>
+
+                    <dl class="hero-facts">
+                        <div>
+                            <dt>Formação</dt>
+                            <dd>ADS · UNIT</dd>
+                        </div>
+                        <div>
+                            <dt>Foco</dt>
+                            <dd>Python · Backend</dd>
+                        </div>
+                        <div>
+                            <dt>Entrega</dt>
+                            <dd>Sistemas · Automação</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="portrait-composition" data-reveal data-reveal-delay="1">
+                    <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
+                    <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
+                    <figure class="portrait-frame">
+                        <img src="imagens/soueu.jpeg" alt="Gabriel Bomfim Bispo em ambiente externo" width="709" height="1260" fetchpriority="high">
+                    </figure>
+                    <div class="portrait-note portrait-note-top">
+                        <span>01</span>
+                        <strong>Entender</strong>
+                        <small>o problema</small>
+                    </div>
+                    <div class="portrait-note portrait-note-bottom">
+                        <span>03</span>
+                        <strong>Entregar</strong>
+                        <small>com qualidade</small>
+                    </div>
+                </div>
             </div>
-        </header>
+        </section>
 
-        <main>
-            <section class="hero" id="topo">
-                <div class="container hero-grid">
-                    <div class="hero-copy">
-                        <p class="eyebrow">Python • Automação • Backend • SQL</p>
-                        <h1>Desenvolvedor de automação e backend orientado a problemas reais.</h1>
-                        <p class="hero-text">
-                            Sou Gabriel Bomfim Bispo, formado em Análise e Desenvolvimento de Sistemas.
-                            Construo automações, sistemas web e ferramentas internas voltadas para
-                            produtividade, controle operacional e qualidade de dados.
+        <section class="section about" id="sobre" aria-labelledby="about-title">
+            <div class="container section-layout">
+                <header class="section-heading" data-reveal>
+                    <p class="section-index">01 / Sobre</p>
+                    <h2 id="about-title">Engenharia com contexto, não apenas código.</h2>
+                </header>
+
+                <div class="about-content" data-reveal data-reveal-delay="1">
+                    <p class="about-intro">
+                        Sou <strong>Gabriel Bomfim Bispo</strong>, graduado em Análise e Desenvolvimento de Sistemas pela Universidade Tiradentes (UNIT).
+                    </p>
+                    <div class="about-columns">
+                        <p>
+                            Meu trabalho parte do entendimento de processos, dados e regras de negócio. A partir daí, desenvolvo soluções que substituem tarefas repetitivas, controles dispersos e fluxos frágeis por software mais claro e rastreável.
                         </p>
-                        <div class="hero-actions">
-                            <a class="button button-primary" href="https://github.com/GabrielB-B" target="_blank" rel="noreferrer">Ver GitHub</a>
-                            <a class="button button-secondary" href="mailto:gabrielb.b@outlook.com">Enviar email</a>
-                        </div>
+                        <p>
+                            Tenho interesse especial em Python, backend, APIs, automação, bancos de dados e processamento de documentos. Também construo aplicações completas, conectando arquitetura, interface, testes e evolução sustentável do produto.
+                        </p>
                     </div>
-                    <div class="hero-card">
-                        <img src="imagens/soueu.jpeg" alt="Foto de Gabriel Bomfim Bispo">
-                        <div class="hero-card-body">
-                            <strong>Formação e foco</strong>
-                            <p>Graduado em ADS, com foco em automação com Python, backend, dados e testes.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section class="section" id="sobre">
-                <div class="container section-grid">
+                    <ol class="process-strip" aria-label="Forma de trabalho">
+                        <li><span>01</span> Contexto</li>
+                        <li><span>02</span> Regra</li>
+                        <li><span>03</span> Solução</li>
+                        <li><span>04</span> Validação</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills" id="competencias" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-heading section-heading-row" data-reveal>
                     <div>
-                        <p class="section-label">Sobre</p>
-                        <h2>Perfil profissional</h2>
+                        <p class="section-index">02 / Competências</p>
+                        <h2 id="skills-title">Tecnologia aplicada a cada camada da solução.</h2>
                     </div>
-                    <div class="section-copy">
-                        <p>
-                            Atuo em operações financeiras no setor público e tenho interesse especial
-                            por projetos que substituem controles manuais, planilhas dispersas e tarefas
-                            repetitivas por sistemas mais confiáveis, rastreáveis e produtivos.
-                        </p>
-                        <p>
-                            Meu trabalho envolve Python, automação de processos, processamento de
-                            planilhas e PDFs, backend web e organização de fluxos internos. Sistemas
-                            operacionais ativos permanecem privados; no portfólio, apresento versões
-                            adaptadas sem dados, credenciais ou documentos reais.
-                        </p>
-                    </div>
-                </div>
-            </section>
+                    <p class="section-aside">Competências demonstradas nos projetos públicos apresentados abaixo.</p>
+                </header>
 
-            <section class="section section-muted" id="foco">
-                <div class="container">
-                    <p class="section-label">Foco técnico</p>
-                    <h2>O que tenho desenvolvido</h2>
-                    <div class="pill-grid">
-                        <span class="pill">Python para automação</span>
-                        <span class="pill">Flask e FastAPI</span>
-                        <span class="pill">SQL e modelagem de dados</span>
-                        <span class="pill">Processamento de planilhas</span>
-                        <span class="pill">Fluxos com PDFs</span>
-                        <span class="pill">Interfaces para uso interno</span>
-                        <span class="pill">Ferramentas operacionais</span>
-                        <span class="pill">Testes automatizados e CI</span>
-                    </div>
+                <div class="skill-grid">
+                    <article class="skill-card" data-reveal>
+                        <span class="skill-number">01</span>
+                        <h3>Linguagens</h3>
+                        <ul>
+                            <li><strong>Python</strong><span>principal</span></li>
+                            <li>JavaScript</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" data-reveal data-reveal-delay="1">
+                        <span class="skill-number">02</span>
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Flask</li>
+                            <li>FastAPI</li>
+                            <li>APIs REST</li>
+                            <li>Autenticação</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" data-reveal data-reveal-delay="2">
+                        <span class="skill-number">03</span>
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML &amp; CSS</li>
+                            <li>React</li>
+                            <li>Interfaces responsivas</li>
+                            <li>Acessibilidade</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" data-reveal>
+                        <span class="skill-number">04</span>
+                        <h3>Dados &amp; automação</h3>
+                        <ul>
+                            <li>SQL &amp; SQLAlchemy</li>
+                            <li>PostgreSQL &amp; MySQL</li>
+                            <li>PyMuPDF &amp; pandas</li>
+                            <li>Excel &amp; documentos</li>
+                        </ul>
+                    </article>
+                    <article class="skill-card" data-reveal data-reveal-delay="1">
+                        <span class="skill-number">05</span>
+                        <h3>Qualidade &amp; operação</h3>
+                        <ul>
+                            <li>Git &amp; GitHub</li>
+                            <li>Testes automatizados</li>
+                            <li>CI &amp; migrations</li>
+                            <li>Arquitetura de software</li>
+                        </ul>
+                    </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="section" id="projetos">
-                <div class="container">
-                    <p class="section-label">Projetos</p>
-                    <h2>Trabalhos que melhor representam meu perfil</h2>
-                    <div class="project-grid">
-                        <article class="project-card">
-                            <p class="project-tag">Flask • SQLAlchemy • Pytest</p>
+        <section class="section projects" id="projetos" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-heading section-heading-row" data-reveal>
+                    <div>
+                        <p class="section-index">03 / Projetos selecionados</p>
+                        <h2 id="projects-title">Problemas reais, soluções verificáveis.</h2>
+                    </div>
+                    <p class="section-aside">Cada projeto foi revisado a partir do código e da documentação pública do repositório.</p>
+                </header>
+
+                <div class="project-list">
+                    <article class="project-card" style="--project-accent: #c7f36b" data-reveal>
+                        <div class="project-media" role="img" aria-label="Espaço preparado para captura do SISCON">
+                            <div class="media-grid" aria-hidden="true"></div>
+                            <div class="media-code" aria-hidden="true">01</div>
+                            <div class="media-placeholder">
+                                <span>Captura segura em preparação</span>
+                                <small>SISCON · painel operacional</small>
+                            </div>
+                            <div class="media-overlay"><span>Área pronta para imagem real</span></div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="status-dot"></span>
+                                Versão pública sanitizada
+                            </div>
+                            <p class="project-number">Projeto 01</p>
                             <h3>SISCON Controle de RPVs</h3>
-                            <p>
-                                Versão pública sanitizada de um sistema Flask para controle financeiro
-                                e operacional de RPVs, com regras de negócio, testes, migrations e auditoria.
+                            <p class="project-description">
+                                Sistema Flask para centralizar controles operacionais e financeiros de RPVs, com regras de negócio, auditoria e leitura gerencial. A cópia pública preserva a arquitetura e os testes sem expor dados reais.
                             </p>
-                            <a href="https://github.com/GabrielB-B/siscon-controle-rpv" target="_blank" rel="noreferrer">Abrir repositório</a>
-                        </article>
+                            <ul class="project-tags" aria-label="Tecnologias">
+                                <li>Python</li>
+                                <li>Flask</li>
+                                <li>SQLAlchemy</li>
+                                <li>Alembic</li>
+                                <li>Pytest</li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/GabrielB-B/siscon-controle-rpv" target="_blank" rel="noreferrer">
+                                Ver repositório <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
 
-                        <article class="project-card">
-                            <p class="project-tag">Python • PyMuPDF • Excel</p>
+                    <article class="project-card project-card-reverse" style="--project-accent: #80d8ff" data-reveal>
+                        <div class="project-media" role="img" aria-label="Espaço preparado para captura do Precatórios PDF to Excel">
+                            <div class="media-grid" aria-hidden="true"></div>
+                            <div class="media-code" aria-hidden="true">02</div>
+                            <div class="media-placeholder">
+                                <span>Captura em preparação</span>
+                                <small>Pipeline · PDF → dados → Excel</small>
+                            </div>
+                            <div class="media-overlay"><span>Área pronta para imagem real</span></div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="status-dot"></span>
+                                Automação desktop
+                            </div>
+                            <p class="project-number">Projeto 02</p>
                             <h3>Precatórios PDF to Excel</h3>
-                            <p>
-                                Aplicação desktop que lê relatórios de precatórios, aplica as regras
-                                necessárias, confere os valores e gera planilhas em Excel.
+                            <p class="project-description">
+                                Pipeline que reconstrói tabelas a partir da geometria de relatórios PDF, aplica regras do domínio, reconcilia valores e entrega planilhas conferidas. Vai além da conversão: organiza um fluxo operacional sujeito a dados fragmentados.
                             </p>
-                            <a href="https://github.com/GabrielB-B/precatorios-pdf-to-excel" target="_blank" rel="noreferrer">Abrir repositório</a>
-                        </article>
+                            <ul class="project-tags" aria-label="Tecnologias">
+                                <li>Python</li>
+                                <li>PyMuPDF</li>
+                                <li>pandas</li>
+                                <li>openpyxl</li>
+                                <li>Tkinter</li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/GabrielB-B/precatorios-pdf-to-excel" target="_blank" rel="noreferrer">
+                                Ver repositório <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
 
-                        <article class="project-card">
-                            <p class="project-tag">FastAPI • React • TypeScript</p>
+                    <article class="project-card" style="--project-accent: #ffbf69" data-reveal>
+                        <div class="project-media" role="img" aria-label="Espaço preparado para captura do Cesta Digital">
+                            <div class="media-grid" aria-hidden="true"></div>
+                            <div class="media-code" aria-hidden="true">03</div>
+                            <div class="media-placeholder">
+                                <span>Captura em preparação</span>
+                                <small>Cesta Digital · gestão social</small>
+                            </div>
+                            <div class="media-overlay"><span>Área pronta para imagem real</span></div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta project-meta-warning">
+                                <span class="status-dot"></span>
+                                Em homologação
+                            </div>
+                            <p class="project-number">Projeto 03</p>
                             <h3>Cesta Digital</h3>
-                            <p>
-                                Plataforma full-stack para cadastros, avaliação socioeconômica, estoque,
-                                elegibilidade, entregas e auditoria em um fluxo de assistência social.
+                            <p class="project-description">
+                                Plataforma full-stack para assistência social: famílias, avaliação socioeconômica, estoque, elegibilidade, entregas e auditoria. O produto está em homologação e profissionalização, ainda sem liberação para ampliar o uso com dados reais.
                             </p>
-                            <a href="https://github.com/GabrielB-B/Cesta-Digital" target="_blank" rel="noreferrer">Abrir repositório</a>
-                        </article>
-                    </div>
-                </div>
-            </section>
+                            <ul class="project-tags" aria-label="Tecnologias">
+                                <li>FastAPI</li>
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>MySQL</li>
+                                <li>Playwright</li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/GabrielB-B/Cesta-Digital" target="_blank" rel="noreferrer">
+                                Ver repositório <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
 
-            <section class="section section-accent" id="contato">
-                <div class="container contact-grid">
-                    <div>
-                        <p class="section-label">Contato</p>
-                        <h2>Aberto a oportunidades e conexões profissionais.</h2>
-                    </div>
-                    <div class="contact-links">
-                        <a href="mailto:gabrielb.b@outlook.com">gabrielb.b@outlook.com</a>
-                        <a href="https://github.com/GabrielB-B" target="_blank" rel="noreferrer">github.com/GabrielB-B</a>
-                    </div>
+                    <article class="project-card project-card-reverse" style="--project-accent: #d3a8ff" data-reveal>
+                        <div class="project-media" role="img" aria-label="Espaço preparado para captura do Nat 1 RPG Engine">
+                            <div class="media-grid" aria-hidden="true"></div>
+                            <div class="media-code" aria-hidden="true">04</div>
+                            <div class="media-placeholder">
+                                <span>Captura em preparação</span>
+                                <small>Nat 1 · continuidade de campanhas</small>
+                            </div>
+                            <div class="media-overlay"><span>Área pronta para imagem real</span></div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta project-meta-progress">
+                                <span class="status-dot"></span>
+                                MVP em construção
+                            </div>
+                            <p class="project-number">Projeto 04</p>
+                            <h3>Nat 1 RPG Engine</h3>
+                            <p class="project-description">
+                                Plataforma para preservar a operação e a continuidade de campanhas de RPG. Já possui fundações de backend e frontend, autenticação e a primeira tela real de campanhas; funcionalidades mais amplas permanecem em etapas futuras do produto.
+                            </p>
+                            <ul class="project-tags" aria-label="Tecnologias">
+                                <li>FastAPI</li>
+                                <li>PostgreSQL</li>
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>TanStack Query</li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/GabrielB-B/nat1-rpg-engine" target="_blank" rel="noreferrer">
+                                Ver repositório <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" style="--project-accent: #ff7b8f" data-reveal>
+                        <div class="project-media" role="img" aria-label="Espaço preparado para captura do Assistente Vampiro">
+                            <div class="media-grid" aria-hidden="true"></div>
+                            <div class="media-code" aria-hidden="true">05</div>
+                            <div class="media-placeholder">
+                                <span>Captura em preparação</span>
+                                <small>Assistente Vampiro · experiência contextual</small>
+                            </div>
+                            <div class="media-overlay"><span>Área pronta para imagem real</span></div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta project-meta-progress">
+                                <span class="status-dot"></span>
+                                Em desenvolvimento · VS01
+                            </div>
+                            <p class="project-number">Projeto 05</p>
+                            <h3>Assistente Vampiro</h3>
+                            <p class="project-description">
+                                Plataforma para aprender, organizar e jogar Vampiro: A Máscara. A fundação de engenharia, persistência, CI e Rules Engine determinístico já existem; a experiência de personagem e mesa segue em desenvolvimento por cortes verticais testáveis.
+                            </p>
+                            <ul class="project-tags" aria-label="Tecnologias">
+                                <li>TypeScript</li>
+                                <li>Node.js</li>
+                                <li>PostgreSQL</li>
+                                <li>Monorepo</li>
+                                <li>Testes</li>
+                            </ul>
+                            <a class="project-link" href="https://github.com/GabrielB-B/Assistente_Vampiro" target="_blank" rel="noreferrer">
+                                Ver repositório <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </article>
                 </div>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contato" aria-labelledby="contact-title">
+            <div class="contact-noise" aria-hidden="true"></div>
+            <div class="container contact-layout">
+                <div data-reveal>
+                    <p class="section-index">04 / Contato</p>
+                    <h2 id="contact-title">Vamos conversar sobre o próximo problema a resolver?</h2>
+                </div>
+                <div class="contact-panel" data-reveal data-reveal-delay="1">
+                    <p>Estou aberto a oportunidades, colaborações e conversas sobre desenvolvimento de software.</p>
+                    <a class="contact-link" href="mailto:gabrielb.b@outlook.com">
+                        <span>Email</span>
+                        <strong>gabrielb.b@outlook.com</strong>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a class="contact-link" href="https://github.com/GabrielB-B" target="_blank" rel="noreferrer">
+                        <span>GitHub</span>
+                        <strong>github.com/GabrielB-B</strong>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>© <span id="current-year">2026</span> Gabriel Bomfim Bispo.</p>
+            <p>Feito com HTML, CSS e JavaScript.</p>
+            <a href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
+        </div>
+    </footer>
 </body>
 </html>

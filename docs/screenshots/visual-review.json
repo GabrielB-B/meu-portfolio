@@ -1,0 +1,120 @@
+[
+  {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "page": [
+      1920,
+      7400
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 5,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "page": [
+      1440,
+      6848
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 5,
+    "fontsReady": "loaded",
+    "consoleProblems": [],
+    "reducedMotion": {
+      "portraitAnimation": "1e-05s",
+      "revealOpacity": "1"
+    }
+  },
+  {
+    "viewport": [
+      1366,
+      768
+    ],
+    "page": [
+      1366,
+      6659
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 5,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "page": [
+      768,
+      9813
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 5,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "page": [
+      390,
+      10249
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 5,
+    "fontsReady": "loaded",
+    "consoleProblems": [],
+    "mobileMenu": {
+      "opened": true,
+      "focusedLast": true,
+      "focusLoop": true,
+      "closed": true
+    }
+  },
+  {
+    "viewport": [
+      360,
+      800
+    ],
+    "page": [
+      360,
+      10286
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 5,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  }
+]
