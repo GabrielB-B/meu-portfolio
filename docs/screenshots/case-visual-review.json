@@ -1,0 +1,90 @@
+[
+  {
+    "path": "/projetos/emissor-pge.html",
+    "viewport": [
+      1440,
+      900
+    ],
+    "page": [
+      1440,
+      2987
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "brokenImages": [],
+    "imagesMissingAlt": [],
+    "unnamedControls": [],
+    "title": "Emissor de Guias PGE | Estudo de caso",
+    "h1Count": 1,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "path": "/projetos/emissor-pge.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "page": [
+      390,
+      3762
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "brokenImages": [],
+    "imagesMissingAlt": [],
+    "unnamedControls": [],
+    "title": "Emissor de Guias PGE | Estudo de caso",
+    "h1Count": 1,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "path": "/projetos/rag-juridico-local.html",
+    "viewport": [
+      1440,
+      900
+    ],
+    "page": [
+      1440,
+      2923
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "brokenImages": [],
+    "imagesMissingAlt": [],
+    "unnamedControls": [],
+    "title": "RAG Jurídico Local | Estudo de caso",
+    "h1Count": 1,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "path": "/projetos/rag-juridico-local.html",
+    "viewport": [
+      390,
+      844
+    ],
+    "page": [
+      390,
+      3829
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "brokenImages": [],
+    "imagesMissingAlt": [],
+    "unnamedControls": [],
+    "title": "RAG Jurídico Local | Estudo de caso",
+    "h1Count": 1,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  }
+]

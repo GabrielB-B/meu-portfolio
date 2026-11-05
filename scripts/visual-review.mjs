@@ -430,10 +430,14 @@ try {
 
     const casePages = [
         { path: '/projetos/emissor-pge.html', width: 1440, height: 900, screenshot: 'case-emissor-desktop.png' },
+        { path: '/projetos/emissor-pge.html', width: 390, height: 844 },
+        { path: '/projetos/rag-juridico-local.html', width: 1440, height: 900 },
         { path: '/projetos/rag-juridico-local.html', width: 390, height: 844, screenshot: 'case-rag-mobile.png' },
     ];
+    const caseReport = [];
 
     for (const page of casePages) {
+        consoleProblems.length = 0;
         await send('Emulation.setDeviceMetricsOverride', {
             width: page.width,
             height: page.height,
@@ -449,11 +453,73 @@ try {
             expression: `(async () => { await document.fonts.ready; await new Promise((done) => setTimeout(done, 350)); })()`,
         });
 
-        const image = await send('Page.captureScreenshot', { format: 'png' });
-        await writeFile(join(root, 'docs', 'screenshots', page.screenshot), Buffer.from(image.data, 'base64'));
+        const { result } = await send('Runtime.evaluate', {
+            returnByValue: true,
+            expression: `(() => {
+                const all = [...document.querySelectorAll('body *')];
+                const overflowing = all.filter((element) => {
+                    const style = getComputedStyle(element);
+                    if (style.position === 'fixed' || style.visibility === 'hidden') return false;
+                    const rect = element.getBoundingClientRect();
+                    return rect.width > 0 && (rect.left < -1 || rect.right > innerWidth + 1);
+                }).slice(0, 12).map((element) => ({
+                    tag: element.tagName.toLowerCase(),
+                    className: element.className?.toString().slice(0, 90) || '',
+                    left: Math.round(element.getBoundingClientRect().left),
+                    right: Math.round(element.getBoundingClientRect().right),
+                }));
+                const internalLinks = [...document.querySelectorAll('a[href^="#"]')];
+                const missingAnchors = internalLinks
+                    .map((link) => link.getAttribute('href'))
+                    .filter((href) => href !== '#' && !document.querySelector(href));
+                const duplicateIds = [...document.querySelectorAll('[id]')]
+                    .map((element) => element.id)
+                    .filter((id, index, ids) => ids.indexOf(id) !== index);
+                const brokenImages = [...document.images]
+                    .filter((image) => (
+                        (image.currentSrc || image.getAttribute('src'))
+                        && image.complete
+                        && image.naturalWidth === 0
+                    ))
+                    .map((image) => image.currentSrc || image.src);
+                const imagesMissingAlt = [...document.images]
+                    .filter((image) => !image.hasAttribute('alt'))
+                    .map((image) => image.currentSrc || image.src);
+                const unnamedControls = [...document.querySelectorAll('button, a[href], input, select, textarea')]
+                    .filter((element) => !(
+                        element.getAttribute('aria-label')
+                        || element.getAttribute('aria-labelledby')
+                        || element.textContent.trim()
+                        || element.getAttribute('title')
+                    ))
+                    .map((element) => element.outerHTML.slice(0, 120));
+                return {
+                    path: location.pathname,
+                    viewport: [innerWidth, innerHeight],
+                    page: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
+                    horizontalOverflow: document.documentElement.scrollWidth > innerWidth,
+                    overflowing,
+                    missingAnchors,
+                    duplicateIds,
+                    brokenImages,
+                    imagesMissingAlt,
+                    unnamedControls,
+                    title: document.title,
+                    h1Count: document.querySelectorAll('h1').length,
+                    fontsReady: document.fonts.status,
+                };
+            })()`,
+        });
+        caseReport.push({ ...result.value, consoleProblems: [...consoleProblems] });
+
+        if (page.screenshot) {
+            const image = await send('Page.captureScreenshot', { format: 'png' });
+            await writeFile(join(root, 'docs', 'screenshots', page.screenshot), Buffer.from(image.data, 'base64'));
+        }
     }
 
     await writeFile(join(root, 'docs', 'screenshots', 'visual-review.json'), `${JSON.stringify(report, null, 2)}\n`);
+    await writeFile(join(root, 'docs', 'screenshots', 'case-visual-review.json'), `${JSON.stringify(caseReport, null, 2)}\n`);
     const failedViewport = report.find((item) => (
         item.horizontalOverflow
         || item.overflowing.length
@@ -470,8 +536,23 @@ try {
     if (failedViewport) {
         throw new Error(`Falha na revisão visual em ${failedViewport.viewport.join('x')}.`);
     }
+    const failedCase = caseReport.find((item) => (
+        item.horizontalOverflow
+        || item.overflowing.length
+        || item.missingAnchors.length
+        || item.duplicateIds.length
+        || item.brokenImages.length
+        || item.imagesMissingAlt.length
+        || item.unnamedControls.length
+        || item.consoleProblems.length
+        || item.fontsReady !== 'loaded'
+        || item.h1Count !== 1
+    ));
+    if (failedCase) {
+        throw new Error(`Falha na revisão de ${failedCase.path} em ${failedCase.viewport.join('x')}.`);
+    }
     socket.close();
-    console.log(JSON.stringify(report, null, 2));
+    console.log(JSON.stringify({ portfolio: report, cases: caseReport }, null, 2));
 } finally {
     await stopProcesses();
 }

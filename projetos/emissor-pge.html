@@ -25,7 +25,7 @@
                 <div>
                     <p class="case-kicker">Estudo de caso · automação</p>
                     <h1 id="case-title">Emissor de Guias PGE</h1>
-                    <p class="case-deck">Uma automação privada criada a partir de uma rotina que eu conhecia por dentro: conferir dados, conduzir emissões no navegador e organizar cada resultado.</p>
+                    <p class="case-deck">Automação privada para processar lotes de emissão de guias, validar os dados de entrada, conduzir as etapas no navegador e organizar os documentos gerados.</p>
                 </div>
                 <dl class="case-meta">
                     <div><dt>Status</dt><dd>Uso interno</dd></div>
@@ -36,19 +36,19 @@
         </section>
         <div class="case-container case-main">
             <aside class="case-aside" aria-label="Resumo do projeto">
-                <p>Projeto desenvolvido por Gabriel Bomfim Bispo para apoiar uma rotina do setor financeiro da PGE de Sergipe.</p>
+                <p>Projeto que desenvolvi para apoiar uma rotina do setor financeiro da PGE de Sergipe. O código e os dados permanecem privados.</p>
                 <a href="mailto:gabrielb.b@outlook.com">Conversar sobre o projeto</a>
             </aside>
             <article class="case-content">
                 <section class="case-section">
                     <p class="case-section-label">01 / Contexto</p>
-                    <h2>O problema vinha da repetição.</h2>
+                    <h2>Contexto e funcionamento do processo</h2>
                     <p>A emissão de guias exigia repetir etapas no navegador, conferir dados vindos de planilhas, organizar os arquivos gerados e registrar o resultado de cada item processado.</p>
-                    <p>A solução nasceu da observação direta desse fluxo, não de um exercício fictício.</p>
+                    <p>Como eu já acompanhava essa rotina, pude mapear as regras do processo, os pontos de conferência e as situações em que a decisão humana precisava ser preservada.</p>
                 </section>
                 <section class="case-section">
-                    <p class="case-section-label">02 / Solução</p>
-                    <h2>Automatizar sem retirar o controle humano.</h2>
+                    <p class="case-section-label">02 / Estrutura</p>
+                    <h2>Estrutura da automação</h2>
                     <ul class="case-list">
                         <li>Lê lotes em planilhas ODS e Excel e normaliza os dados.</li>
                         <li>Conduz o fluxo de emissão no navegador e preserva confirmações humanas quando necessárias.</li>
@@ -59,16 +59,17 @@
                 </section>
                 <section class="case-section">
                     <p class="case-section-label">03 / Decisões técnicas</p>
-                    <h2>Confiabilidade para uma rotina real.</h2>
-                    <p>O processamento em lote usa política de retentativas e diagnóstico local de compatibilidade entre Chrome e ChromeDriver. A distribuição foi preparada como aplicativo Windows e o núcleo possui testes automatizados.</p>
+                    <h2>Decisões de implementação</h2>
+                    <p>O processamento em lote usa uma política de retentativas e faz o diagnóstico local de compatibilidade entre Chrome e ChromeDriver. Cada item é registrado separadamente para que uma falha possa ser identificada sem perder o acompanhamento do restante do lote.</p>
+                    <p>A interface foi preparada como aplicativo Windows. O núcleo possui testes automatizados e o fluxo permite pausa, interrupção e retomada quando a operação precisa ser conferida.</p>
                     <ul class="case-tech" aria-label="Tecnologias usadas">
                         <li>Python</li><li>Selenium</li><li>Tkinter</li><li>openpyxl</li><li>ezodf</li>
                     </ul>
                 </section>
                 <section class="case-section">
-                    <p class="case-section-label">04 / Resultado e limites</p>
-                    <h2>Menos repetição, acompanhamento mais claro.</h2>
-                    <p>A ferramenta reduziu o trabalho manual repetitivo, padronizou a execução por lote e tornou mais claro o que foi processado e o que ainda exige atenção.</p>
+                    <p class="case-section-label">04 / Validação e limites</p>
+                    <h2>Validação, privacidade e manutenção</h2>
+                    <p>Os dados são validados antes das etapas de emissão, e os arquivos baixados são conferidos e organizados por item processado. Ao final, o relatório diferencia sucessos e falhas para facilitar a revisão e uma eventual retomada.</p>
                     <div class="case-note"><p>Por privacidade, código-fonte, endereços internos, credenciais, documentos, planilhas e dados operacionais não são públicos. Este estudo apresenta apenas o que pode ser compartilhado com segurança.</p></div>
                 </section>
             </article>

@@ -25,7 +25,7 @@
                 <div>
                     <p class="case-kicker">Estudo de caso · IA local</p>
                     <h1 id="case-title">RAG Jurídico Local</h1>
-                    <p class="case-deck">Um projeto em desenvolvimento para organizar, recuperar e consultar legislação brasileira com fontes oficiais, rastreabilidade e execução local.</p>
+                    <p class="case-deck">Projeto em desenvolvimento para coletar, organizar e recuperar legislação brasileira a partir de fontes oficiais, com metadados preservados e processamento local.</p>
                 </div>
                 <dl class="case-meta">
                     <div><dt>Status</dt><dd>Em desenvolvimento</dd></div>
@@ -36,19 +36,19 @@
         </section>
         <div class="case-container case-main">
             <aside class="case-aside" aria-label="Resumo do projeto">
-                <p>Estudo prático de engenharia de dados, busca semântica e modelos locais aplicado a textos jurídicos.</p>
+                <p>Uso este projeto para estudar engenharia de dados, busca semântica e modelos locais aplicados a textos jurídicos.</p>
                 <a href="mailto:gabrielb.b@outlook.com">Conversar sobre o projeto</a>
             </aside>
             <article class="case-content">
                 <section class="case-section">
                     <p class="case-section-label">01 / Contexto</p>
-                    <h2>Uma base jurídica precisa ser rastreável.</h2>
+                    <h2>Objetivo e origem dos dados</h2>
                     <p>A proposta é construir uma base em que os textos venham de fontes oficiais, preservem seus metadados e possam ser relacionados à norma de origem.</p>
                     <p>O projeto também é meu laboratório para estudar recuperação de informação, engenharia de dados e uso local de modelos de linguagem.</p>
                 </section>
                 <section class="case-section">
-                    <p class="case-section-label">02 / O que já existe</p>
-                    <h2>Do texto oficial à busca semântica.</h2>
+                    <p class="case-section-label">02 / Implementação atual</p>
+                    <h2>Pipeline implementado</h2>
                     <ul class="case-list">
                         <li>Coleta de legislação a partir de identificadores e fontes oficiais.</li>
                         <li>Extração, limpeza, normalização e registro canônico em JSON.</li>
@@ -59,16 +59,18 @@
                     </ul>
                 </section>
                 <section class="case-section">
-                    <p class="case-section-label">03 / Próxima etapa</p>
-                    <h2>Responder com referência explícita.</h2>
-                    <p>Estão em desenvolvimento a consolidação da camada vetorial, a geração de respostas com Llama local, a referência aos trechos recuperados e a validação das respostas contra as fontes.</p>
+                    <p class="case-section-label">03 / Decisões técnicas</p>
+                    <h2>Decisões de implementação</h2>
+                    <p>A segmentação respeita artigos e a hierarquia do texto jurídico para evitar divisões arbitrárias. Os registros preservam a norma de origem e os metadados necessários para relacionar cada trecho recuperado à fonte correspondente.</p>
+                    <p>A estrutura utiliza PostgreSQL e pgvector para a camada vetorial e mantém embeddings e modelos em execução local.</p>
                     <ul class="case-tech" aria-label="Tecnologias usadas">
                         <li>Python</li><li>Beautiful Soup</li><li>sentence-transformers</li><li>PostgreSQL</li><li>pgvector</li><li>Llama</li>
                     </ul>
                 </section>
                 <section class="case-section">
-                    <p class="case-section-label">04 / Limites</p>
-                    <h2>Privacidade local, estágio honesto.</h2>
+                    <p class="case-section-label">04 / Limites e próximos passos</p>
+                    <h2>Limitações e próximos passos</h2>
+                    <p>A consolidação da busca vetorial, a geração de respostas com Llama local, a apresentação das citações e a validação das respostas contra as fontes continuam em desenvolvimento.</p>
                     <p>O processamento local permite estudar IA generativa sem depender do envio do conteúdo consultado para um serviço externo.</p>
                     <div class="case-note"><p>O projeto ainda está em evolução, não substitui consulta às fontes oficiais e não deve ser apresentado como ferramenta de aconselhamento jurídico.</p></div>
                 </section>

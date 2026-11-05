@@ -100,7 +100,7 @@ a { color: inherit; }
 .case-hero {
     position: relative;
     overflow: hidden;
-    padding: clamp(86px, 11vw, 150px) 0 clamp(76px, 9vw, 120px);
+    padding: clamp(78px, 9vw, 124px) 0 clamp(68px, 8vw, 100px);
     color: var(--case-white);
     background: var(--case-ink);
 }
@@ -171,7 +171,7 @@ a { color: inherit; }
 
 .case-main {
     display: grid;
-    padding: clamp(80px, 10vw, 140px) 0;
+    padding: clamp(72px, 8vw, 112px) 0;
     grid-template-columns: minmax(180px, .35fr) minmax(0, 1fr);
     gap: clamp(48px, 9vw, 130px);
 }
@@ -196,8 +196,8 @@ a { color: inherit; }
 .case-content { max-width: 760px; }
 
 .case-section {
-    padding: 0 0 64px;
-    margin-bottom: 64px;
+    padding: 0 0 52px;
+    margin-bottom: 52px;
     border-bottom: 1px solid var(--case-line);
 }
 
@@ -205,10 +205,10 @@ a { color: inherit; }
 .case-section-label { color: var(--case-muted); }
 
 .case-section h2 {
-    max-width: 13ch;
+    max-width: 21ch;
     margin: 12px 0 24px;
     font-family: var(--case-display);
-    font-size: clamp(2.45rem, 5vw, 4.3rem);
+    font-size: clamp(2.25rem, 4.2vw, 3.65rem);
     font-weight: 600;
     letter-spacing: -0.05em;
     line-height: 1;
