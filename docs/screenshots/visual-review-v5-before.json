@@ -1,0 +1,613 @@
+[
+  {
+    "viewport": [
+      1920,
+      1080
+    ],
+    "page": [
+      1920,
+      10131
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "page": [
+      1440,
+      9694
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "projectMedia": [
+      {
+        "label": "Painel inicial sanitizado do SISCON com indicadores financeiros e operacionais",
+        "container": [
+          755,
+          436
+        ],
+        "rendered": [
+          735,
+          368
+        ],
+        "widthUse": "97%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      },
+      {
+        "label": "Identidade visual do aplicativo Precatórios PDF to Excel",
+        "container": [
+          495,
+          513
+        ],
+        "rendered": [
+          466,
+          466
+        ],
+        "widthUse": "94%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      },
+      {
+        "label": "Painel demonstrativo do Cesta Digital com indicadores de famílias, entregas e estoque",
+        "container": [
+          681,
+          541
+        ],
+        "rendered": [
+          652,
+          489
+        ],
+        "widthUse": "96%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      },
+      {
+        "label": "Direção visual do seletor de personagens do Assistente Vampiro",
+        "container": [
+          604,
+          340
+        ],
+        "rendered": [
+          568,
+          320
+        ],
+        "widthUse": "94%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      }
+    ],
+    "projectCards": [
+      {
+        "title": "Emissor de Guias PGE",
+        "category": "placeholder",
+        "card": [
+          1240,
+          595
+        ],
+        "media": [
+          669,
+          593
+        ],
+        "body": [
+          569,
+          593
+        ]
+      },
+      {
+        "title": "SISCON Controle de RPVs",
+        "category": "panorama",
+        "card": [
+          1240,
+          438
+        ],
+        "media": [
+          755,
+          436
+        ],
+        "body": [
+          483,
+          436
+        ]
+      },
+      {
+        "title": "Precatórios PDF to Excel",
+        "category": "standard",
+        "card": [
+          1240,
+          515
+        ],
+        "media": [
+          495,
+          513
+        ],
+        "body": [
+          743,
+          513
+        ]
+      },
+      {
+        "title": "Cesta Digital",
+        "category": "standard",
+        "card": [
+          1240,
+          543
+        ],
+        "media": [
+          681,
+          541
+        ],
+        "body": [
+          557,
+          541
+        ]
+      },
+      {
+        "title": "RAG Jurídico Local",
+        "category": "placeholder",
+        "card": [
+          1240,
+          543
+        ],
+        "media": [
+          669,
+          541
+        ],
+        "body": [
+          569,
+          541
+        ]
+      },
+      {
+        "title": "Nat 1 RPG Engine",
+        "category": "secondary",
+        "card": [
+          606,
+          851
+        ],
+        "media": [
+          604,
+          340
+        ],
+        "body": [
+          604,
+          495
+        ]
+      },
+      {
+        "title": "Assistente Vampiro",
+        "category": "secondary",
+        "card": [
+          606,
+          851
+        ],
+        "media": [
+          604,
+          340
+        ],
+        "body": [
+          604,
+          509
+        ]
+      }
+    ],
+    "fontsReady": "loaded",
+    "consoleProblems": [],
+    "mediaHover": {
+      "zoomed": true,
+      "hintVisible": true
+    },
+    "reducedMotion": {
+      "portraitAnimation": "1e-05s",
+      "revealOpacity": "1"
+    },
+    "imageViewer": {
+      "opened": true,
+      "sourceLoaded": true,
+      "descriptionMatches": true,
+      "closed": true
+    }
+  },
+  {
+    "viewport": [
+      1366,
+      768
+    ],
+    "page": [
+      1366,
+      9534
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      1024,
+      768
+    ],
+    "page": [
+      1024,
+      9461
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "projectCards": [
+      {
+        "title": "Emissor de Guias PGE",
+        "category": "placeholder",
+        "card": [
+          944,
+          560
+        ],
+        "media": [
+          496,
+          558
+        ],
+        "body": [
+          446,
+          558
+        ]
+      },
+      {
+        "title": "SISCON Controle de RPVs",
+        "category": "panorama",
+        "card": [
+          944,
+          369
+        ],
+        "media": [
+          446,
+          367
+        ],
+        "body": [
+          496,
+          367
+        ]
+      },
+      {
+        "title": "Precatórios PDF to Excel",
+        "category": "standard",
+        "card": [
+          944,
+          598
+        ],
+        "media": [
+          496,
+          596
+        ],
+        "body": [
+          446,
+          596
+        ]
+      },
+      {
+        "title": "Cesta Digital",
+        "category": "standard",
+        "card": [
+          944,
+          523
+        ],
+        "media": [
+          446,
+          521
+        ],
+        "body": [
+          496,
+          521
+        ]
+      },
+      {
+        "title": "RAG Jurídico Local",
+        "category": "placeholder",
+        "card": [
+          944,
+          551
+        ],
+        "media": [
+          496,
+          549
+        ],
+        "body": [
+          446,
+          549
+        ]
+      },
+      {
+        "title": "Nat 1 RPG Engine",
+        "category": "secondary",
+        "card": [
+          458,
+          833
+        ],
+        "media": [
+          456,
+          257
+        ],
+        "body": [
+          456,
+          561
+        ]
+      },
+      {
+        "title": "Assistente Vampiro",
+        "category": "secondary",
+        "card": [
+          458,
+          833
+        ],
+        "media": [
+          456,
+          257
+        ],
+        "body": [
+          456,
+          574
+        ]
+      }
+    ],
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      768,
+      1024
+    ],
+    "page": [
+      768,
+      13442
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "page": [
+      390,
+      15001
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "projectMedia": [
+      {
+        "label": "Painel inicial sanitizado do SISCON com indicadores financeiros e operacionais",
+        "container": [
+          356,
+          178
+        ],
+        "rendered": [
+          340,
+          170
+        ],
+        "widthUse": "96%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      },
+      {
+        "label": "Identidade visual do aplicativo Precatórios PDF to Excel",
+        "container": [
+          356,
+          356
+        ],
+        "rendered": [
+          348,
+          348
+        ],
+        "widthUse": "98%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      },
+      {
+        "label": "Painel demonstrativo do Cesta Digital com indicadores de famílias, entregas e estoque",
+        "container": [
+          356,
+          267
+        ],
+        "rendered": [
+          345,
+          259
+        ],
+        "widthUse": "97%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      },
+      {
+        "label": "Direção visual do seletor de personagens do Assistente Vampiro",
+        "container": [
+          356,
+          200
+        ],
+        "rendered": [
+          342,
+          192
+        ],
+        "widthUse": "96%",
+        "fullyVisible": true,
+        "sourceLoaded": true
+      }
+    ],
+    "projectCards": [
+      {
+        "title": "Emissor de Guias PGE",
+        "category": "placeholder",
+        "card": [
+          358,
+          881
+        ],
+        "media": [
+          356,
+          267
+        ],
+        "body": [
+          356,
+          612
+        ]
+      },
+      {
+        "title": "SISCON Controle de RPVs",
+        "category": "panorama",
+        "card": [
+          358,
+          686
+        ],
+        "media": [
+          356,
+          178
+        ],
+        "body": [
+          356,
+          506
+        ]
+      },
+      {
+        "title": "Precatórios PDF to Excel",
+        "category": "standard",
+        "card": [
+          358,
+          944
+        ],
+        "media": [
+          356,
+          356
+        ],
+        "body": [
+          356,
+          586
+        ]
+      },
+      {
+        "title": "Cesta Digital",
+        "category": "standard",
+        "card": [
+          358,
+          844
+        ],
+        "media": [
+          356,
+          267
+        ],
+        "body": [
+          356,
+          575
+        ]
+      },
+      {
+        "title": "RAG Jurídico Local",
+        "category": "placeholder",
+        "card": [
+          358,
+          881
+        ],
+        "media": [
+          356,
+          267
+        ],
+        "body": [
+          356,
+          612
+        ]
+      },
+      {
+        "title": "Nat 1 RPG Engine",
+        "category": "secondary",
+        "card": [
+          358,
+          779
+        ],
+        "media": [
+          356,
+          200
+        ],
+        "body": [
+          356,
+          577
+        ]
+      },
+      {
+        "title": "Assistente Vampiro",
+        "category": "secondary",
+        "card": [
+          358,
+          841
+        ],
+        "media": [
+          356,
+          200
+        ],
+        "body": [
+          356,
+          639
+        ]
+      }
+    ],
+    "fontsReady": "loaded",
+    "consoleProblems": [],
+    "mobileMenu": {
+      "opened": true,
+      "focusedLast": true,
+      "focusLoop": true,
+      "closed": true
+    }
+  },
+  {
+    "viewport": [
+      360,
+      800
+    ],
+    "page": [
+      360,
+      15140
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "missingAnchors": [],
+    "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
+    "h1Count": 1,
+    "projectCount": 7,
+    "projectImageCount": 4,
+    "fontsReady": "loaded",
+    "consoleProblems": []
+  }
+]

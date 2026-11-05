@@ -13,6 +13,7 @@ const viewports = [
     { width: 1920, height: 1080 },
     { width: 1440, height: 900, screenshot: 'portfolio-desktop.png' },
     { width: 1366, height: 768 },
+    { width: 1024, height: 768, screenshot: 'portfolio-tablet.png' },
     { width: 768, height: 1024 },
     { width: 390, height: 844, screenshot: 'portfolio-mobile.png' },
     { width: 360, height: 800 },
@@ -213,6 +214,27 @@ try {
                 const missingAnchors = internalLinks
                     .map((link) => link.getAttribute('href'))
                     .filter((href) => href !== '#' && !document.querySelector(href));
+                const duplicateIds = [...document.querySelectorAll('[id]')]
+                    .map((element) => element.id)
+                    .filter((id, index, ids) => ids.indexOf(id) !== index);
+                const brokenImages = [...document.images]
+                    .filter((image) => (
+                        (image.currentSrc || image.getAttribute('src'))
+                        && image.complete
+                        && image.naturalWidth === 0
+                    ))
+                    .map((image) => image.currentSrc || image.src);
+                const imagesMissingAlt = [...document.images]
+                    .filter((image) => !image.hasAttribute('alt'))
+                    .map((image) => image.currentSrc || image.src);
+                const unnamedControls = [...document.querySelectorAll('button, a[href], input, select, textarea')]
+                    .filter((element) => !(
+                        element.getAttribute('aria-label')
+                        || element.getAttribute('aria-labelledby')
+                        || element.textContent.trim()
+                        || element.getAttribute('title')
+                    ))
+                    .map((element) => element.outerHTML.slice(0, 120));
                 const projectMedia = [1440, 390].includes(innerWidth)
                     ? [...document.querySelectorAll('.project-media-image')].map((element) => {
                         const rect = element.getBoundingClientRect();
@@ -237,17 +259,42 @@ try {
                         };
                     })
                     : undefined;
+                const projectCards = [1440, 1024, 390].includes(innerWidth)
+                    ? [...document.querySelectorAll('.project-card')].map((card) => {
+                        const cardRect = card.getBoundingClientRect();
+                        const mediaRect = card.querySelector('.project-media').getBoundingClientRect();
+                        const bodyRect = card.querySelector('.project-body').getBoundingClientRect();
+                        return {
+                            title: card.querySelector('h3')?.textContent.trim(),
+                            category: card.classList.contains('project-card-compact')
+                                ? 'secondary'
+                                : card.classList.contains('project-card-media-panorama')
+                                    ? 'panorama'
+                                    : card.classList.contains('project-card-placeholder')
+                                        ? 'placeholder'
+                                        : 'standard',
+                            card: [Math.round(cardRect.width), Math.round(cardRect.height)],
+                            media: [Math.round(mediaRect.width), Math.round(mediaRect.height)],
+                            body: [Math.round(bodyRect.width), Math.round(bodyRect.height)],
+                        };
+                    })
+                    : undefined;
                 return {
                     viewport: [innerWidth, innerHeight],
                     page: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
                     horizontalOverflow: document.documentElement.scrollWidth > innerWidth,
                     overflowing,
                     missingAnchors,
+                    duplicateIds,
+                    brokenImages,
+                    imagesMissingAlt,
+                    unnamedControls,
                     title: document.title,
                     h1Count: document.querySelectorAll('h1').length,
                     projectCount: document.querySelectorAll('.project-card').length,
                     projectImageCount: document.querySelectorAll('.project-media-image').length,
                     projectMedia,
+                    projectCards,
                     fontsReady: document.fonts.status,
                 };
             })()`,
@@ -407,6 +454,22 @@ try {
     }
 
     await writeFile(join(root, 'docs', 'screenshots', 'visual-review.json'), `${JSON.stringify(report, null, 2)}\n`);
+    const failedViewport = report.find((item) => (
+        item.horizontalOverflow
+        || item.overflowing.length
+        || item.missingAnchors.length
+        || item.duplicateIds.length
+        || item.brokenImages.length
+        || item.imagesMissingAlt.length
+        || item.unnamedControls.length
+        || item.consoleProblems.length
+        || item.fontsReady !== 'loaded'
+        || (item.mobileMenu && Object.values(item.mobileMenu).some((value) => !value))
+        || (item.imageViewer && Object.values(item.imageViewer).some((value) => !value))
+    ));
+    if (failedViewport) {
+        throw new Error(`Falha na revisão visual em ${failedViewport.viewport.join('x')}.`);
+    }
     socket.close();
     console.log(JSON.stringify(report, null, 2));
 } finally {
