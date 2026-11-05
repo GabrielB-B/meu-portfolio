@@ -6,7 +6,7 @@
     ],
     "page": [
       1920,
-      8442
+      8306
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -25,7 +25,7 @@
     ],
     "page": [
       1440,
-      7927
+      7790
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -39,13 +39,13 @@
         "label": "Painel inicial sanitizado do SISCON com indicadores financeiros e operacionais",
         "container": [
           755,
-          529
+          392
         ],
         "rendered": [
-          715,
-          358
+          735,
+          368
         ],
-        "widthUse": "95%",
+        "widthUse": "97%",
         "fullyVisible": true
       },
       {
@@ -102,7 +102,7 @@
     ],
     "page": [
       1366,
-      7793
+      7659
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -121,7 +121,7 @@
     ],
     "page": [
       768,
-      11608
+      11451
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -140,7 +140,7 @@
     ],
     "page": [
       390,
-      12170
+      12041
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -157,10 +157,10 @@
           223
         ],
         "rendered": [
-          332,
-          166
+          336,
+          168
         ],
-        "widthUse": "93%",
+        "widthUse": "94%",
         "fullyVisible": true
       },
       {
@@ -219,7 +219,7 @@
     ],
     "page": [
       360,
-      12279
+      12146
     ],
     "horizontalOverflow": false,
     "overflowing": [],

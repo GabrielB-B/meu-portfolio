@@ -782,6 +782,39 @@ ol {
     font-size: clamp(2.25rem, 3.2vw, 3.25rem);
 }
 
+.project-card-media-panorama .project-body {
+    min-height: 0;
+    padding-block: 20px;
+}
+
+.project-card-media-panorama .project-number {
+    margin-top: 12px;
+}
+
+.project-card-media-panorama .project-body h3 {
+    font-size: clamp(2.25rem, 2.9vw, 3rem);
+}
+
+.project-card-media-panorama .project-description {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.project-card-media-panorama .project-tags {
+    margin-top: 12px;
+}
+
+.project-card-media-panorama .project-link {
+    margin-top: 14px;
+    padding-top: 14px;
+}
+
+.project-card-media-panorama .project-media-image {
+    min-height: 0;
+    padding: 10px;
+}
+
 .project-media {
     position: relative;
     min-height: 500px;
