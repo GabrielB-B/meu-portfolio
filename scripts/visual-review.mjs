@@ -217,6 +217,8 @@ try {
                     ? [...document.querySelectorAll('.project-media-image')].map((element) => {
                         const rect = element.getBoundingClientRect();
                         const style = getComputedStyle(element);
+                        const layer = element.querySelector('.project-image-layer');
+                        const image = element.querySelector('.project-image-layer img');
                         const contentWidth = rect.width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
                         const contentHeight = rect.height - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
                         const sourceWidth = Number(element.dataset.mediaWidth);
@@ -226,11 +228,12 @@ try {
                         const renderedHeight = sourceHeight * scale;
 
                         return {
-                            label: element.getAttribute('aria-label'),
+                            label: element.dataset.imageAlt,
                             container: [Math.round(rect.width), Math.round(rect.height)],
                             rendered: [Math.round(renderedWidth), Math.round(renderedHeight)],
                             widthUse: Math.round((renderedWidth / rect.width) * 100) + '%',
-                            fullyVisible: style.backgroundSize.split(',')[0].trim() === 'contain',
+                            fullyVisible: layer && getComputedStyle(layer).backgroundSize === 'contain',
+                            sourceLoaded: Boolean(image?.complete && image.naturalWidth === sourceWidth),
                         };
                     })
                     : undefined;
@@ -280,6 +283,41 @@ try {
         }
 
         if (viewport.width === 1440) {
+            const { result: hoverTargetResult } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                awaitPromise: true,
+                expression: `(async () => {
+                    const trigger = document.querySelector('[data-project-media]');
+                    trigger.scrollIntoView({ block: 'center', behavior: 'instant' });
+                    await new Promise((done) => setTimeout(done, 120));
+                    const rect = trigger.getBoundingClientRect();
+                    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+                })()`,
+            });
+            await send('Input.dispatchMouseEvent', {
+                type: 'mouseMoved',
+                x: hoverTargetResult.value.x,
+                y: hoverTargetResult.value.y,
+            });
+            await send('Runtime.evaluate', {
+                awaitPromise: true,
+                expression: `new Promise((done) => setTimeout(done, 480))`,
+            });
+            const { result: hoverResult } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                expression: `(() => {
+                    const trigger = document.querySelector('[data-project-media]');
+                    const layer = trigger.querySelector('.project-image-layer');
+                    const hint = trigger.querySelector('.media-zoom-hint');
+                    return {
+                        zoomed: getComputedStyle(layer).transform !== 'none',
+                        hintVisible: Number(getComputedStyle(hint).opacity) > 0.9,
+                    };
+                })()`,
+            });
+            diagnostics.mediaHover = hoverResult.value;
+            await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 1, y: 1 });
+
             await send('Emulation.setEmulatedMedia', {
                 features: [{ name: 'prefers-reduced-motion', value: 'reduce' }],
             });
@@ -292,6 +330,33 @@ try {
             });
             diagnostics.reducedMotion = motionResult.value;
             await send('Emulation.setEmulatedMedia', { features: [] });
+
+            const { result: viewerResult } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                awaitPromise: true,
+                expression: `(async () => {
+                    const trigger = document.querySelector('[data-project-media]');
+                    const viewer = document.querySelector('[data-image-viewer]');
+                    const image = document.querySelector('[data-image-viewer-image]');
+                    trigger.click();
+                    await image.decode();
+                    const opened = viewer.open;
+                    const sourceLoaded = image.naturalWidth === Number(trigger.dataset.mediaWidth);
+                    const descriptionMatches = image.alt === trigger.dataset.imageAlt;
+                    return { opened, sourceLoaded, descriptionMatches };
+                })()`,
+            });
+            const viewerImage = await send('Page.captureScreenshot', { format: 'png' });
+            await writeFile(join(root, 'docs', 'screenshots', 'project-image-viewer.png'), Buffer.from(viewerImage.data, 'base64'));
+            const { result: viewerCloseResult } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                expression: `(() => {
+                    const viewer = document.querySelector('[data-image-viewer]');
+                    document.querySelector('[data-image-viewer-close]').click();
+                    return !viewer.open;
+                })()`,
+            });
+            diagnostics.imageViewer = { ...viewerResult.value, closed: viewerCloseResult.value };
         }
 
         if (viewport.screenshot) {

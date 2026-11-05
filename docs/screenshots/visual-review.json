@@ -6,7 +6,7 @@
     ],
     "page": [
       1920,
-      8306
+      8231
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -25,7 +25,7 @@
     ],
     "page": [
       1440,
-      7790
+      7727
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -46,33 +46,36 @@
           368
         ],
         "widthUse": "97%",
-        "fullyVisible": true
+        "fullyVisible": true,
+        "sourceLoaded": true
       },
       {
         "label": "Identidade visual do aplicativo Precatórios PDF to Excel",
         "container": [
-          669,
-          566
+          495,
+          500
         ],
         "rendered": [
-          526,
-          526
+          466,
+          466
         ],
-        "widthUse": "79%",
-        "fullyVisible": true
+        "widthUse": "94%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       },
       {
         "label": "Painel demonstrativo do Cesta Digital com indicadores de famílias, entregas e estoque",
         "container": [
-          755,
-          510
+          681,
+          513
         ],
         "rendered": [
-          627,
-          470
+          646,
+          484
         ],
-        "widthUse": "83%",
-        "fullyVisible": true
+        "widthUse": "95%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       },
       {
         "label": "Direção visual do seletor de personagens do Assistente Vampiro",
@@ -81,18 +84,29 @@
           340
         ],
         "rendered": [
-          533,
-          300
+          568,
+          320
         ],
-        "widthUse": "88%",
-        "fullyVisible": true
+        "widthUse": "94%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       }
     ],
     "fontsReady": "loaded",
     "consoleProblems": [],
+    "mediaHover": {
+      "zoomed": true,
+      "hintVisible": true
+    },
     "reducedMotion": {
       "portraitAnimation": "1e-05s",
       "revealOpacity": "1"
+    },
+    "imageViewer": {
+      "opened": true,
+      "sourceLoaded": true,
+      "descriptionMatches": true,
+      "closed": true
     }
   },
   {
@@ -102,7 +116,7 @@
     ],
     "page": [
       1366,
-      7659
+      7603
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -121,7 +135,7 @@
     ],
     "page": [
       768,
-      11451
+      11720
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -140,7 +154,7 @@
     ],
     "page": [
       390,
-      12041
+      12164
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -154,40 +168,43 @@
         "label": "Painel inicial sanitizado do SISCON com indicadores financeiros e operacionais",
         "container": [
           356,
-          223
+          178
         ],
         "rendered": [
-          336,
-          168
+          340,
+          170
         ],
-        "widthUse": "94%",
-        "fullyVisible": true
+        "widthUse": "96%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       },
       {
         "label": "Identidade visual do aplicativo Precatórios PDF to Excel",
         "container": [
           356,
-          223
+          356
         ],
         "rendered": [
-          199,
-          199
+          348,
+          348
         ],
-        "widthUse": "56%",
-        "fullyVisible": true
+        "widthUse": "98%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       },
       {
         "label": "Painel demonstrativo do Cesta Digital com indicadores de famílias, entregas e estoque",
         "container": [
           356,
-          223
+          267
         ],
         "rendered": [
-          265,
-          199
+          345,
+          259
         ],
-        "widthUse": "74%",
-        "fullyVisible": true
+        "widthUse": "97%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       },
       {
         "label": "Direção visual do seletor de personagens do Assistente Vampiro",
@@ -196,11 +213,12 @@
           200
         ],
         "rendered": [
-          313,
-          176
+          342,
+          192
         ],
-        "widthUse": "88%",
-        "fullyVisible": true
+        "widthUse": "96%",
+        "fullyVisible": true,
+        "sourceLoaded": true
       }
     ],
     "fontsReady": "loaded",
@@ -219,7 +237,7 @@
     ],
     "page": [
       360,
-      12146
+      12232
     ],
     "horizontalOverflow": false,
     "overflowing": [],

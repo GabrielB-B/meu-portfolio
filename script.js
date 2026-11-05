@@ -10,6 +10,12 @@
     const revealItems = [...document.querySelectorAll('[data-reveal]')];
     const pageContent = [document.querySelector('.skip-link'), document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const projectMediaButtons = [...document.querySelectorAll('[data-project-media]')];
+    const imageViewer = document.querySelector('[data-image-viewer]');
+    const imageViewerImage = document.querySelector('[data-image-viewer-image]');
+    const imageViewerCaption = document.querySelector('[data-image-viewer-caption]');
+    const imageViewerOpen = document.querySelector('[data-image-viewer-open]');
+    const imageViewerClose = document.querySelector('[data-image-viewer-close]');
 
     const setHeaderState = () => {
         header?.classList.toggle('is-scrolled', window.scrollY > 24);
@@ -109,6 +115,42 @@
 
         sections.forEach((section) => sectionObserver.observe(section));
     };
+
+    const openImageViewer = (trigger) => {
+        if (!imageViewer || !imageViewerImage || !imageViewerCaption || !imageViewerOpen) return;
+
+        const source = trigger.dataset.imageSrc;
+        const description = trigger.dataset.imageAlt || 'Imagem ampliada do projeto';
+        if (!source) return;
+
+        imageViewerImage.src = source;
+        imageViewerImage.alt = description;
+        imageViewerImage.classList.remove('is-zoomed');
+        imageViewerCaption.textContent = description;
+        imageViewerOpen.href = source;
+        document.body.classList.add('viewer-open');
+        imageViewer.showModal();
+        requestAnimationFrame(() => imageViewerClose?.focus());
+    };
+
+    projectMediaButtons.forEach((button) => {
+        button.addEventListener('click', () => openImageViewer(button));
+    });
+
+    imageViewerClose?.addEventListener('click', () => imageViewer?.close());
+
+    imageViewer?.addEventListener('click', (event) => {
+        if (event.target === imageViewer) imageViewer.close();
+    });
+
+    imageViewer?.addEventListener('close', () => {
+        document.body.classList.remove('viewer-open');
+        imageViewerImage?.classList.remove('is-zoomed');
+    });
+
+    imageViewerImage?.addEventListener('click', () => {
+        imageViewerImage.classList.toggle('is-zoomed');
+    });
 
     const currentYear = document.querySelector('#current-year');
     if (currentYear) currentYear.textContent = String(new Date().getFullYear());
