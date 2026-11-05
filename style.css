@@ -770,6 +770,18 @@ ol {
     order: 2;
 }
 
+.project-card-media-wide {
+    grid-template-columns: minmax(390px, 0.78fr) minmax(0, 1.22fr);
+}
+
+.project-card-media-wide .project-body {
+    padding: clamp(36px, 3.6vw, 50px);
+}
+
+.project-card-media-wide .project-body h3 {
+    font-size: clamp(2.25rem, 3.2vw, 3.25rem);
+}
+
 .project-media {
     position: relative;
     min-height: 500px;
@@ -781,7 +793,7 @@ ol {
 
 .project-media-image {
     box-sizing: border-box;
-    padding: 64px 28px 28px;
+    padding: clamp(14px, 1.5vw, 20px);
     background-color: var(--media-surface, var(--ink));
     background-image:
         var(--project-image),
@@ -791,6 +803,10 @@ ol {
     background-size: contain, cover;
     background-origin: content-box, border-box;
     background-clip: content-box, border-box;
+}
+
+.project-media-image .media-overlay {
+    display: none;
 }
 
 .project-media-image::before,
@@ -1383,7 +1399,7 @@ ol {
     .project-media { aspect-ratio: 4 / 3; }
     .project-media-image {
         aspect-ratio: 16 / 10;
-        padding: 16px;
+        padding: 12px;
     }
 
     .media-code {

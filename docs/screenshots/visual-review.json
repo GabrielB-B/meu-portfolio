@@ -6,7 +6,7 @@
     ],
     "page": [
       1920,
-      8456
+      8442
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -25,7 +25,7 @@
     ],
     "page": [
       1440,
-      7939
+      7927
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -34,6 +34,60 @@
     "h1Count": 1,
     "projectCount": 7,
     "projectImageCount": 4,
+    "projectMedia": [
+      {
+        "label": "Painel inicial sanitizado do SISCON com indicadores financeiros e operacionais",
+        "container": [
+          755,
+          529
+        ],
+        "rendered": [
+          715,
+          358
+        ],
+        "widthUse": "95%",
+        "fullyVisible": true
+      },
+      {
+        "label": "Identidade visual do aplicativo Precatórios PDF to Excel",
+        "container": [
+          669,
+          566
+        ],
+        "rendered": [
+          526,
+          526
+        ],
+        "widthUse": "79%",
+        "fullyVisible": true
+      },
+      {
+        "label": "Painel demonstrativo do Cesta Digital com indicadores de famílias, entregas e estoque",
+        "container": [
+          755,
+          510
+        ],
+        "rendered": [
+          627,
+          470
+        ],
+        "widthUse": "83%",
+        "fullyVisible": true
+      },
+      {
+        "label": "Direção visual do seletor de personagens do Assistente Vampiro",
+        "container": [
+          604,
+          340
+        ],
+        "rendered": [
+          533,
+          300
+        ],
+        "widthUse": "88%",
+        "fullyVisible": true
+      }
+    ],
     "fontsReady": "loaded",
     "consoleProblems": [],
     "reducedMotion": {
@@ -48,7 +102,7 @@
     ],
     "page": [
       1366,
-      7806
+      7793
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -86,7 +140,7 @@
     ],
     "page": [
       390,
-      12151
+      12170
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -95,6 +149,60 @@
     "h1Count": 1,
     "projectCount": 7,
     "projectImageCount": 4,
+    "projectMedia": [
+      {
+        "label": "Painel inicial sanitizado do SISCON com indicadores financeiros e operacionais",
+        "container": [
+          356,
+          223
+        ],
+        "rendered": [
+          332,
+          166
+        ],
+        "widthUse": "93%",
+        "fullyVisible": true
+      },
+      {
+        "label": "Identidade visual do aplicativo Precatórios PDF to Excel",
+        "container": [
+          356,
+          223
+        ],
+        "rendered": [
+          199,
+          199
+        ],
+        "widthUse": "56%",
+        "fullyVisible": true
+      },
+      {
+        "label": "Painel demonstrativo do Cesta Digital com indicadores de famílias, entregas e estoque",
+        "container": [
+          356,
+          223
+        ],
+        "rendered": [
+          265,
+          199
+        ],
+        "widthUse": "74%",
+        "fullyVisible": true
+      },
+      {
+        "label": "Direção visual do seletor de personagens do Assistente Vampiro",
+        "container": [
+          356,
+          200
+        ],
+        "rendered": [
+          313,
+          176
+        ],
+        "widthUse": "88%",
+        "fullyVisible": true
+      }
+    ],
     "fontsReady": "loaded",
     "consoleProblems": [],
     "mobileMenu": {
@@ -111,7 +219,7 @@
     ],
     "page": [
       360,
-      12210
+      12279
     ],
     "horizontalOverflow": false,
     "overflowing": [],

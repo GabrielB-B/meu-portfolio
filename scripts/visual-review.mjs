@@ -213,6 +213,27 @@ try {
                 const missingAnchors = internalLinks
                     .map((link) => link.getAttribute('href'))
                     .filter((href) => href !== '#' && !document.querySelector(href));
+                const projectMedia = [1440, 390].includes(innerWidth)
+                    ? [...document.querySelectorAll('.project-media-image')].map((element) => {
+                        const rect = element.getBoundingClientRect();
+                        const style = getComputedStyle(element);
+                        const contentWidth = rect.width - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+                        const contentHeight = rect.height - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+                        const sourceWidth = Number(element.dataset.mediaWidth);
+                        const sourceHeight = Number(element.dataset.mediaHeight);
+                        const scale = Math.min(contentWidth / sourceWidth, contentHeight / sourceHeight);
+                        const renderedWidth = sourceWidth * scale;
+                        const renderedHeight = sourceHeight * scale;
+
+                        return {
+                            label: element.getAttribute('aria-label'),
+                            container: [Math.round(rect.width), Math.round(rect.height)],
+                            rendered: [Math.round(renderedWidth), Math.round(renderedHeight)],
+                            widthUse: Math.round((renderedWidth / rect.width) * 100) + '%',
+                            fullyVisible: style.backgroundSize.split(',')[0].trim() === 'contain',
+                        };
+                    })
+                    : undefined;
                 return {
                     viewport: [innerWidth, innerHeight],
                     page: [document.documentElement.scrollWidth, document.documentElement.scrollHeight],
@@ -223,6 +244,7 @@ try {
                     h1Count: document.querySelectorAll('h1').length,
                     projectCount: document.querySelectorAll('.project-card').length,
                     projectImageCount: document.querySelectorAll('.project-media-image').length,
+                    projectMedia,
                     fontsReady: document.fonts.status,
                 };
             })()`,
