@@ -235,6 +235,10 @@ try {
                         || element.getAttribute('title')
                     ))
                     .map((element) => element.outerHTML.slice(0, 120));
+                const educationText = document.querySelector('.education-panel')?.textContent ?? '';
+                const skillsText = document.querySelector('#competencias')?.textContent ?? '';
+                const linkedin = document.querySelector('a[href*="linkedin.com/in/"]');
+                const linkedinRel = new Set((linkedin?.rel ?? '').split(/\\s+/).filter(Boolean));
                 const projectMedia = [1440, 390].includes(innerWidth)
                     ? [...document.querySelectorAll('.project-media-image')].map((element) => {
                         const rect = element.getBoundingClientRect();
@@ -289,6 +293,16 @@ try {
                     brokenImages,
                     imagesMissingAlt,
                     unnamedControls,
+                    contentChecks: {
+                        mateAcademyInProgress: educationText.includes('Mate Academy')
+                            && educationText.includes('Em andamento'),
+                        moduleNineCurrent: educationText.includes('Módulo 9 — Python Core Part II'),
+                        futureModulesNotClaimed: !/(Django|Django REST Framework|Docker)/.test(skillsText),
+                        linkedinExact: linkedin?.href === 'https://www.linkedin.com/in/gabriel-b-606382222/',
+                        linkedinSecure: linkedin?.target === '_blank'
+                            && linkedinRel.has('noopener')
+                            && linkedinRel.has('noreferrer'),
+                    },
                     title: document.title,
                     h1Count: document.querySelectorAll('h1').length,
                     projectCount: document.querySelectorAll('.project-card').length,
@@ -408,7 +422,7 @@ try {
 
         if (viewport.screenshot) {
             await send('Runtime.evaluate', {
-                expression: `document.activeElement?.blur()`,
+                expression: `scrollTo(0, 0); document.activeElement?.blur()`,
             });
             const { contentSize } = await send('Page.getLayoutMetrics');
             const image = await send('Page.captureScreenshot', {
@@ -423,6 +437,38 @@ try {
                 },
             });
             await writeFile(join(root, 'docs', 'screenshots', viewport.screenshot), Buffer.from(image.data, 'base64'));
+        }
+
+        if (viewport.width === 1440) {
+            const sectionScreenshots = [
+                { selector: '#sobre', file: 'update-mate-formation.png' },
+                { selector: '#competencias', file: 'update-mate-skills.png' },
+                { selector: '#contato', file: 'update-linkedin-contact.png' },
+            ];
+
+            for (const section of sectionScreenshots) {
+                const { result: boundsResult } = await send('Runtime.evaluate', {
+                    returnByValue: true,
+                    expression: `(() => {
+                        const rect = document.querySelector('${section.selector}').getBoundingClientRect();
+                        return {
+                            x: Math.max(0, Math.floor(rect.left + scrollX)),
+                            y: Math.max(0, Math.floor(rect.top + scrollY)),
+                            width: Math.ceil(rect.width),
+                            height: Math.ceil(rect.height),
+                        };
+                    })()`,
+                });
+                const sectionImage = await send('Page.captureScreenshot', {
+                    format: 'png',
+                    captureBeyondViewport: true,
+                    clip: { ...boundsResult.value, scale: 1 },
+                });
+                await writeFile(
+                    join(root, 'docs', 'screenshots', section.file),
+                    Buffer.from(sectionImage.data, 'base64'),
+                );
+            }
         }
 
         report.push(diagnostics);
@@ -530,6 +576,7 @@ try {
         || item.unnamedControls.length
         || item.consoleProblems.length
         || item.fontsReady !== 'loaded'
+        || Object.values(item.contentChecks).some((value) => !value)
         || (item.mobileMenu && Object.values(item.mobileMenu).some((value) => !value))
         || (item.imageViewer && Object.values(item.imageViewer).some((value) => !value))
     ));
