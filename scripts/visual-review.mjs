@@ -239,6 +239,12 @@ try {
                 const skillsText = document.querySelector('#competencias')?.textContent ?? '';
                 const linkedin = document.querySelector('a[href*="linkedin.com/in/"]');
                 const linkedinRel = new Set((linkedin?.rel ?? '').split(/\\s+/).filter(Boolean));
+                const skillCards = [...document.querySelectorAll('.skill-card')];
+                const skillRows = new Set(skillCards.map((card) => Math.round(card.getBoundingClientRect().top)));
+                const expectedSkillRows = innerWidth <= 600 ? 5 : innerWidth <= 900 ? 3 : 2;
+                const skillOverflow = skillCards.flatMap((card) => [...card.querySelectorAll('*')])
+                    .filter((element) => element.scrollWidth > element.clientWidth + 1)
+                    .map((element) => element.textContent.trim().slice(0, 80));
                 const projectMedia = [1440, 390].includes(innerWidth)
                     ? [...document.querySelectorAll('.project-media-image')].map((element) => {
                         const rect = element.getBoundingClientRect();
@@ -303,6 +309,13 @@ try {
                             && linkedinRel.has('noopener')
                             && linkedinRel.has('noreferrer'),
                     },
+                    skillLayout: {
+                        rows: skillRows.size,
+                        expectedRows: expectedSkillRows,
+                        cardWidths: skillCards.map((card) => Math.round(card.getBoundingClientRect().width)),
+                        overflow: skillOverflow,
+                        valid: skillRows.size === expectedSkillRows && skillOverflow.length === 0,
+                    },
                     title: document.title,
                     h1Count: document.querySelectorAll('h1').length,
                     projectCount: document.querySelectorAll('.project-card').length,
@@ -316,6 +329,30 @@ try {
 
         const diagnostics = result.value;
         diagnostics.consoleProblems = [...consoleProblems];
+
+        if (viewport.width === 1440) {
+            const { result: anchorResult } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                awaitPromise: true,
+                expression: `(async () => {
+                    document.querySelector('a[href="#competencias"]').click();
+                    await new Promise((done) => setTimeout(done, 700));
+                    const header = document.querySelector('.site-header').getBoundingClientRect();
+                    const section = document.querySelector('#competencias').getBoundingClientRect();
+                    const heading = document.querySelector('#skills-title').getBoundingClientRect();
+                    const result = {
+                        headerBottom: Math.round(header.bottom),
+                        sectionTop: Math.round(section.top),
+                        headingTop: Math.round(heading.top),
+                        notCovered: heading.top >= header.bottom + 8,
+                    };
+                    scrollTo(0, 0);
+                    await new Promise((done) => setTimeout(done, 450));
+                    return result;
+                })()`,
+            });
+            diagnostics.skillsAnchor = anchorResult.value;
+        }
 
         if (viewport.width === 390) {
             const { result: menuResult } = await send('Runtime.evaluate', {
@@ -344,6 +381,40 @@ try {
         }
 
         if (viewport.width === 1440) {
+            const { result: skillHoverTarget } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                awaitPromise: true,
+                expression: `(async () => {
+                    const card = document.querySelector('.skill-card');
+                    card.scrollIntoView({ block: 'center', behavior: 'instant' });
+                    await new Promise((done) => setTimeout(done, 120));
+                    const rect = card.getBoundingClientRect();
+                    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+                })()`,
+            });
+            await send('Input.dispatchMouseEvent', {
+                type: 'mouseMoved',
+                x: skillHoverTarget.value.x,
+                y: skillHoverTarget.value.y,
+            });
+            await send('Runtime.evaluate', {
+                awaitPromise: true,
+                expression: `new Promise((done) => setTimeout(done, 380))`,
+            });
+            const { result: skillHoverResult } = await send('Runtime.evaluate', {
+                returnByValue: true,
+                expression: `(() => {
+                    const card = document.querySelector('.skill-card');
+                    return {
+                        lifted: getComputedStyle(card).transform !== 'none',
+                        accentVisible: getComputedStyle(card, '::before').transform !== 'none',
+                        readable: Number(getComputedStyle(card.querySelector('ul')).opacity) === 1,
+                    };
+                })()`,
+            });
+            diagnostics.skillHover = skillHoverResult.value;
+            await send('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 1, y: 1 });
+
             const { result: hoverTargetResult } = await send('Runtime.evaluate', {
                 returnByValue: true,
                 awaitPromise: true,
@@ -439,11 +510,14 @@ try {
             await writeFile(join(root, 'docs', 'screenshots', viewport.screenshot), Buffer.from(image.data, 'base64'));
         }
 
-        if (viewport.width === 1440) {
+        if ([1440, 1024, 390].includes(viewport.width)) {
+            const skillsScreenshotByWidth = {
+                1440: 'skills-grid-after-desktop.png',
+                1024: 'skills-grid-after-tablet.png',
+                390: 'skills-grid-after-mobile.png',
+            };
             const sectionScreenshots = [
-                { selector: '#sobre', file: 'update-mate-formation.png' },
-                { selector: '#competencias', file: 'update-mate-skills.png' },
-                { selector: '#contato', file: 'update-linkedin-contact.png' },
+                { selector: '#competencias', file: skillsScreenshotByWidth[viewport.width] },
             ];
 
             for (const section of sectionScreenshots) {
@@ -577,6 +651,9 @@ try {
         || item.consoleProblems.length
         || item.fontsReady !== 'loaded'
         || Object.values(item.contentChecks).some((value) => !value)
+        || !item.skillLayout.valid
+        || (item.skillsAnchor && !item.skillsAnchor.notCovered)
+        || (item.skillHover && Object.values(item.skillHover).some((value) => !value))
         || (item.mobileMenu && Object.values(item.mobileMenu).some((value) => !value))
         || (item.imageViewer && Object.values(item.imageViewer).some((value) => !value))
     ));

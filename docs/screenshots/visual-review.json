@@ -6,7 +6,7 @@
     ],
     "page": [
       1920,
-      8769
+      9055
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -22,6 +22,19 @@
       "linkedinExact": true,
       "linkedinSecure": true
     },
+    "skillLayout": {
+      "rows": 2,
+      "expectedRows": 2,
+      "cardWidths": [
+        412,
+        412,
+        412,
+        619,
+        619
+      ],
+      "overflow": [],
+      "valid": true
+    },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
     "projectCount": 7,
@@ -36,7 +49,7 @@
     ],
     "page": [
       1440,
-      8365
+      8643
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -51,6 +64,19 @@
       "futureModulesNotClaimed": true,
       "linkedinExact": true,
       "linkedinSecure": true
+    },
+    "skillLayout": {
+      "rows": 2,
+      "expectedRows": 2,
+      "cardWidths": [
+        412,
+        412,
+        412,
+        619,
+        619
+      ],
+      "overflow": [],
+      "valid": true
     },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
@@ -230,6 +256,17 @@
     ],
     "fontsReady": "loaded",
     "consoleProblems": [],
+    "skillsAnchor": {
+      "headerBottom": 68,
+      "sectionTop": 131,
+      "headingTop": 298,
+      "notCovered": true
+    },
+    "skillHover": {
+      "lifted": true,
+      "accentVisible": true,
+      "readable": true
+    },
     "mediaHover": {
       "zoomed": true,
       "hintVisible": true
@@ -252,7 +289,7 @@
     ],
     "page": [
       1366,
-      8144
+      8415
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -268,6 +305,19 @@
       "linkedinExact": true,
       "linkedinSecure": true
     },
+    "skillLayout": {
+      "rows": 2,
+      "expectedRows": 2,
+      "cardWidths": [
+        412,
+        412,
+        412,
+        619,
+        619
+      ],
+      "overflow": [],
+      "valid": true
+    },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
     "projectCount": 7,
@@ -282,7 +332,7 @@
     ],
     "page": [
       1024,
-      8765
+      8726
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -297,6 +347,19 @@
       "futureModulesNotClaimed": true,
       "linkedinExact": true,
       "linkedinSecure": true
+    },
+    "skillLayout": {
+      "rows": 2,
+      "expectedRows": 2,
+      "cardWidths": [
+        313,
+        313,
+        313,
+        471,
+        471
+      ],
+      "overflow": [],
+      "valid": true
     },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
@@ -426,7 +489,7 @@
     ],
     "page": [
       768,
-      12325
+      12261
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -442,6 +505,19 @@
       "linkedinExact": true,
       "linkedinSecure": true
     },
+    "skillLayout": {
+      "rows": 3,
+      "expectedRows": 3,
+      "cardWidths": [
+        359,
+        359,
+        359,
+        359,
+        718
+      ],
+      "overflow": [],
+      "valid": true
+    },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
     "projectCount": 7,
@@ -456,7 +532,7 @@
     ],
     "page": [
       390,
-      14251
+      14300
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -471,6 +547,19 @@
       "futureModulesNotClaimed": true,
       "linkedinExact": true,
       "linkedinSecure": true
+    },
+    "skillLayout": {
+      "rows": 5,
+      "expectedRows": 5,
+      "cardWidths": [
+        356,
+        356,
+        356,
+        356,
+        356
+      ],
+      "overflow": [],
+      "valid": true
     },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
@@ -664,7 +753,7 @@
     ],
     "page": [
       360,
-      14546
+      14638
     ],
     "horizontalOverflow": false,
     "overflowing": [],
@@ -679,6 +768,19 @@
       "futureModulesNotClaimed": true,
       "linkedinExact": true,
       "linkedinSecure": true
+    },
+    "skillLayout": {
+      "rows": 5,
+      "expectedRows": 5,
+      "cardWidths": [
+        326,
+        326,
+        326,
+        326,
+        326
+      ],
+      "overflow": [],
+      "valid": true
     },
     "title": "Gabriel Bomfim Bispo | Desenvolvedor de software",
     "h1Count": 1,
